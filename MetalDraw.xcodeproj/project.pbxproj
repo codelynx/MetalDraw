@@ -6,20 +6,139 @@
 	objectVersion = 48;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CCA5E3621FC389C300AC275F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3611FC389C300AC275F /* AppDelegate.swift */; };
+		CCA5E3641FC389C300AC275F /* MetalDrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3631FC389C300AC275F /* MetalDrawViewController.swift */; };
+		CCA5E3661FC389C300AC275F /* MetalDrawDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3651FC389C300AC275F /* MetalDrawDocument.swift */; };
+		CCA5E3681FC389C300AC275F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCA5E3671FC389C300AC275F /* Assets.xcassets */; };
+		CCA5E36B1FC389C300AC275F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA5E3691FC389C300AC275F /* Main.storyboard */; };
+		CCA5E3741FC38E5200AC275F /* MetalDrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3731FC38E5200AC275F /* MetalDrawView.swift */; };
+		CCA5E3761FC38F7000AC275F /* MetalScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3751FC38F7000AC275F /* MetalScene.swift */; };
+		CCA5E3781FC3907000AC275F /* MetalSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3771FC3907000AC275F /* MetalSceneView.swift */; };
+		CCA5E37D1FC393A500AC275F /* FlippedClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E37C1FC393A500AC275F /* FlippedClipView.swift */; };
+		CCA5E37F1FC3A4D600AC275F /* CoreGraphics+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E37E1FC3A4D600AC275F /* CoreGraphics+Z.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CCA5E35E1FC389C300AC275F /* MetalDraw_mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalDraw_mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCA5E3611FC389C300AC275F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CCA5E3631FC389C300AC275F /* MetalDrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalDrawViewController.swift; sourceTree = "<group>"; };
+		CCA5E3651FC389C300AC275F /* MetalDrawDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalDrawDocument.swift; sourceTree = "<group>"; };
+		CCA5E3671FC389C300AC275F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CCA5E36A1FC389C300AC275F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CCA5E36C1FC389C300AC275F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCA5E36D1FC389C300AC275F /* MetalDraw_mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetalDraw_mac.entitlements; sourceTree = "<group>"; };
+		CCA5E3731FC38E5200AC275F /* MetalDrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalDrawView.swift; sourceTree = "<group>"; };
+		CCA5E3751FC38F7000AC275F /* MetalScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalScene.swift; sourceTree = "<group>"; };
+		CCA5E3771FC3907000AC275F /* MetalSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalSceneView.swift; sourceTree = "<group>"; };
+		CCA5E37C1FC393A500AC275F /* FlippedClipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlippedClipView.swift; sourceTree = "<group>"; };
+		CCA5E37E1FC3A4D600AC275F /* CoreGraphics+Z.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreGraphics+Z.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CCA5E35B1FC389C300AC275F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
 		CCA5E3531FC3899E00AC275F = {
 			isa = PBXGroup;
 			children = (
+				CCA5E3601FC389C300AC275F /* MetalDraw_mac */,
+				CCA5E35F1FC389C300AC275F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
+		CCA5E35F1FC389C300AC275F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CCA5E35E1FC389C300AC275F /* MetalDraw_mac.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CCA5E3601FC389C300AC275F /* MetalDraw_mac */ = {
+			isa = PBXGroup;
+			children = (
+				CCA5E37B1FC3938500AC275F /* Utilities */,
+				CCA5E3721FC38E0800AC275F /* MetalDraw */,
+				CCA5E3711FC389DA00AC275F /* Main */,
+				CCA5E3671FC389C300AC275F /* Assets.xcassets */,
+			);
+			path = MetalDraw_mac;
+			sourceTree = "<group>";
+		};
+		CCA5E3711FC389DA00AC275F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CCA5E36C1FC389C300AC275F /* Info.plist */,
+				CCA5E36D1FC389C300AC275F /* MetalDraw_mac.entitlements */,
+				CCA5E3691FC389C300AC275F /* Main.storyboard */,
+				CCA5E3611FC389C300AC275F /* AppDelegate.swift */,
+				CCA5E3631FC389C300AC275F /* MetalDrawViewController.swift */,
+				CCA5E3651FC389C300AC275F /* MetalDrawDocument.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CCA5E3721FC38E0800AC275F /* MetalDraw */ = {
+			isa = PBXGroup;
+			children = (
+				CCA5E3731FC38E5200AC275F /* MetalDrawView.swift */,
+				CCA5E3751FC38F7000AC275F /* MetalScene.swift */,
+				CCA5E3771FC3907000AC275F /* MetalSceneView.swift */,
+			);
+			path = MetalDraw;
+			sourceTree = "<group>";
+		};
+		CCA5E37B1FC3938500AC275F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CCA5E37E1FC3A4D600AC275F /* CoreGraphics+Z.swift */,
+				CCA5E37C1FC393A500AC275F /* FlippedClipView.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CCA5E35D1FC389C300AC275F /* MetalDraw_mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCA5E36E1FC389C300AC275F /* Build configuration list for PBXNativeTarget "MetalDraw_mac" */;
+			buildPhases = (
+				CCA5E35A1FC389C300AC275F /* Sources */,
+				CCA5E35B1FC389C300AC275F /* Frameworks */,
+				CCA5E35C1FC389C300AC275F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MetalDraw_mac;
+			productName = MetalDraw_mac;
+			productReference = CCA5E35E1FC389C300AC275F /* MetalDraw_mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		CCA5E3541FC3899E00AC275F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0910;
 				LastUpgradeCheck = 0910;
+				TargetAttributes = {
+					CCA5E35D1FC389C300AC275F = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = CCA5E3571FC3899E00AC275F /* Build configuration list for PBXProject "MetalDraw" */;
 			compatibilityVersion = "Xcode 8.0";
@@ -27,14 +146,58 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CCA5E3531FC3899E00AC275F;
+			productRefGroup = CCA5E35F1FC389C300AC275F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				CCA5E35D1FC389C300AC275F /* MetalDraw_mac */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CCA5E35C1FC389C300AC275F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCA5E3681FC389C300AC275F /* Assets.xcassets in Resources */,
+				CCA5E36B1FC389C300AC275F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CCA5E35A1FC389C300AC275F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCA5E3641FC389C300AC275F /* MetalDrawViewController.swift in Sources */,
+				CCA5E3761FC38F7000AC275F /* MetalScene.swift in Sources */,
+				CCA5E3621FC389C300AC275F /* AppDelegate.swift in Sources */,
+				CCA5E3781FC3907000AC275F /* MetalSceneView.swift in Sources */,
+				CCA5E3741FC38E5200AC275F /* MetalDrawView.swift in Sources */,
+				CCA5E3661FC389C300AC275F /* MetalDrawDocument.swift in Sources */,
+				CCA5E37F1FC3A4D600AC275F /* CoreGraphics+Z.swift in Sources */,
+				CCA5E37D1FC393A500AC275F /* FlippedClipView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CCA5E3691FC389C300AC275F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CCA5E36A1FC389C300AC275F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CCA5E3581FC3899E00AC275F /* Debug */ = {
@@ -49,6 +212,132 @@
 			};
 			name = Release;
 		};
+		CCA5E36F1FC389C300AC275F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = MetalDraw_mac/Main/MetalDraw_mac.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 2P97EM4L4N;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/MetalDraw_mac/Main/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.MetalDraw-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		CCA5E3701FC389C300AC275F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = MetalDraw_mac/Main/MetalDraw_mac.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 2P97EM4L4N;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/MetalDraw_mac/Main/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.electricwoods.MetalDraw-mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -57,6 +346,15 @@
 			buildConfigurations = (
 				CCA5E3581FC3899E00AC275F /* Debug */,
 				CCA5E3591FC3899E00AC275F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCA5E36E1FC389C300AC275F /* Build configuration list for PBXNativeTarget "MetalDraw_mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCA5E36F1FC389C300AC275F /* Debug */,
+				CCA5E3701FC389C300AC275F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

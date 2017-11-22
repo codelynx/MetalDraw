@@ -8,6 +8,8 @@
 
 import Foundation
 import CoreGraphics
+import QuartzCore
+import simd
 
 infix operator •
 infix operator ×
@@ -120,6 +122,17 @@ extension CGAffineTransform {
 		return lhs.concatenating(rhs)
 	}
 
+}
+
+extension float4x4 {
+	init(affineTransform: CGAffineTransform) {
+		let t = CATransform3DMakeAffineTransform(affineTransform)
+		self.init(
+					float4(Float(t.m11), Float(t.m12), Float(t.m13), Float(t.m14)),
+					float4(Float(t.m21), Float(t.m22), Float(t.m23), Float(t.m24)),
+					float4(Float(t.m31), Float(t.m22), Float(t.m33), Float(t.m34)),
+					float4(Float(t.m41), Float(t.m22), Float(t.m43), Float(t.m44)))
+	}
 }
 
 

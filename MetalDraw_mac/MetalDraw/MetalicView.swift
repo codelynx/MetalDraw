@@ -6,17 +6,29 @@
 //
 
 import Cocoa
+import MetalKit
 
-class MetalDrawView: NSView {
+extension NSNotification.Name {
+	static let displayMetalicScene = NSNotification.Name("DisplayMetalicScene")
+}
 
-	var scene: MetalScene? {
-		didSet {
-		}
+extension Selector {
+	//static let metalicSceneNeedsDisplay = #selector(MetalicView.metalicSceneNeedsDisplay(:_))
+}
+
+class MetalicView: NSView {
+
+	static let device = MetalicDevice.shared
+
+	static let pixelFormat = MTLPixelFormat.bgra8Unorm
+
+	var scene: MetalicScene? {
+		get { return self.sceneView.scene }
+		set { self.sceneView.scene = newValue }
 	}
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-
     }
 	
 	override func layout() {
@@ -38,14 +50,14 @@ class MetalDrawView: NSView {
 		scrollView.drawsBackground = false
 		scrollView.translatesAutoresizingMaskIntoConstraints = false
 		scrollView.allowsMagnification = true
-		NotificationCenter.default.addObserver(self, selector: #selector(MetalDrawView.scrollContentDidChange(_:)),
+		NotificationCenter.default.addObserver(self, selector: #selector(MetalicView.scrollContentDidChange(_:)),
 					name: NSView.boundsDidChangeNotification, object: nil)
 
 		return scrollView
 	}()
 
-	private (set) lazy var sceneView: MetalSceneView = {
-		let sceneView = MetalSceneView(frame: CGRect.zero)
+	private (set) lazy var sceneView: MetalicSceneView = {
+		let sceneView = MetalicSceneView(frame: CGRect.zero)
 		sceneView.translatesAutoresizingMaskIntoConstraints = false
 		return sceneView
 	}()
@@ -69,19 +81,40 @@ class MetalDrawView: NSView {
 
 		self.scrollView.maxMagnification = 4
 		self.scrollView.minMagnification = 0.5
+
+		NotificationCenter.default.addObserver(self, selector: #selector(MetalicView.redisplayScene), name:.displayMetalicScene, object: self)
+		self.enableSetNeedsDisplay = true
 		return {}
 	}()
 
-	@objc func scrollContentDidChange(_ notification: Notification) {
-		print("-----")
-		print("\(#function)")
+	@objc func redisplayScene(_ notification: NSNotification) {
+		if let sourceScene = notification.object as? MetalicScene, let destinationScene = self.scene, sourceScene == destinationScene {
+			self.sceneView.setNeedsDisplay(self.bounds)
+		}
+	}
 
-		print(self.window!.contentView!.constraintsAffectingLayout(for: .horizontal))
-		print(self.window!.contentView!.constraintsAffectingLayout(for: .vertical))
+	@objc func scrollContentDidChange(_ notification: Notification) {
+		self.sceneView.setNeedsDisplay(self.sceneView.bounds)
 	}
 	
 	var allowsMagnification: Bool {
 		get { return self.scrollView.allowsMagnification }
 		set { self.scrollView.allowsMagnification = newValue }
 	}
+
+	var maxMagnification: CGFloat {
+		get { return self.scrollView.maxMagnification }
+		set { self.scrollView.maxMagnification = newValue }
+	}
+
+	var minMagnification: CGFloat {
+		get { return self.scrollView.minMagnification }
+		set { self.scrollView.minMagnification = newValue }
+	}
+
+	var enableSetNeedsDisplay: Bool {
+		get { return self.sceneView.enableSetNeedsDisplay }
+		set { self.sceneView.enableSetNeedsDisplay = newValue }
+	}
+
 }

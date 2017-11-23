@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		372ED8481FC74E0E005EDD6A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372ED8471FC74E0E005EDD6A /* Extensions.swift */; };
 		CC0700BE1FC7317A00BFB914 /* MetalicEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0700BD1FC7317A00BFB914 /* MetalicEvent.swift */; };
 		CCA5E3621FC389C300AC275F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3611FC389C300AC275F /* AppDelegate.swift */; };
 		CCA5E3641FC389C300AC275F /* MetalDrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3631FC389C300AC275F /* MetalDrawViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		372ED8471FC74E0E005EDD6A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = MetalDraw_mac/Utilities/Extensions.swift; sourceTree = "<group>"; };
 		CC0700BD1FC7317A00BFB914 /* MetalicEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalicEvent.swift; sourceTree = "<group>"; };
 		CCA5E35E1FC389C300AC275F /* MetalDraw_mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalDraw_mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA5E3611FC389C300AC275F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		CCA5E3531FC3899E00AC275F = {
 			isa = PBXGroup;
 			children = (
+				372ED8471FC74E0E005EDD6A /* Extensions.swift */,
 				CCA5E3601FC389C300AC275F /* MetalDraw_mac */,
 				CCA5E35F1FC389C300AC275F /* Products */,
 			);
@@ -216,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372ED8481FC74E0E005EDD6A /* Extensions.swift in Sources */,
 				CCA5E3901FC400E100AC275F /* SampleScene.swift in Sources */,
 				CCA5E3841FC3D20300AC275F /* ColorRenderer.swift in Sources */,
 				CCA5E3961FC473D400AC275F /* MetalicBuffer.swift in Sources */,
@@ -300,7 +304,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 2P97EM4L4N;
+                DEVELOPMENT_TEAM = 2P97EM4L4N;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -367,7 +371,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 2P97EM4L4N;
+                DEVELOPMENT_TEAM = 2P97EM4L4N;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

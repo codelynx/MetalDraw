@@ -17,12 +17,8 @@ struct MetalicDevice {
 	}()
 
 	private init?() {
-		if let device = MTLCreateSystemDefaultDevice() {
-			self.device = device
-		}
-		else {
-			return nil
-		}
+        guard let device = MTLCreateSystemDefaultDevice() else { return nil }
+        self.device = device
 	}
 
 	func makeBuffer<T>(items: [T], capacity: Int? = nil) throws -> MetalicBuffer<T> {

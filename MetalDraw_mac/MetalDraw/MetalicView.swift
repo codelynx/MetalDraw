@@ -8,8 +8,8 @@
 import Cocoa
 import MetalKit
 
-extension NSNotification.Name {
-	static let displayMetalicScene = NSNotification.Name("DisplayMetalicScene")
+extension Notification.Name {
+	static let DisplayMetalicScene = Notification.Name("DisplayMetalicScene")
 }
 
 extension Selector {
@@ -20,7 +20,7 @@ class MetalicView: NSView {
 
 	static let device = MetalicDevice.shared
 
-	static let pixelFormat = MTLPixelFormat.bgra8Unorm
+    static let pixelFormat: MTLPixelFormat = .bgra8Unorm
 
 	var scene: MetalicScene? {
 		get { return self.sceneView.scene }
@@ -55,7 +55,7 @@ class MetalicView: NSView {
 		scrollView.drawsBackground = false
 		scrollView.translatesAutoresizingMaskIntoConstraints = false
 		scrollView.allowsMagnification = false
-		NotificationCenter.default.addObserver(self, selector: #selector(MetalicView.scrollContentDidChange(_:)),
+		NotificationCenter.default.addObserver(self, selector: #selector(scrollContentDidChange),
 					name: NSView.boundsDidChangeNotification, object: nil)
 
 		return scrollView
@@ -87,7 +87,7 @@ class MetalicView: NSView {
 		self.scrollView.maxMagnification = 4
 		self.scrollView.minMagnification = 0.5
 
-		NotificationCenter.default.addObserver(self, selector: #selector(MetalicView.displayScene), name:.displayMetalicScene, object: self)
+		NotificationCenter.default.addObserver(self, selector: #selector(displayScene), name:.DisplayMetalicScene, object: self)
 		self.enableSetNeedsDisplay = true
 		return {}
 	}()

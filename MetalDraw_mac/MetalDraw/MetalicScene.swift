@@ -26,7 +26,7 @@ class MetalicScene: MetalicNode, Equatable {
 	}
 
 	func setNeedsDisplay() {
-		NotificationCenter.default.post(name: .displayMetalicScene, object: self)
+		NotificationCenter.default.post(name: .DisplayMetalicScene, object: self)
 	}
 
 	static func == (lhs: MetalicScene, rhs: MetalicScene) -> Bool {

@@ -20,10 +20,6 @@ class MetalDrawViewController: NSViewController {
 		self.metalicView.scene = self.sampleScene
 	}
 
-	override var representedObject: Any? {
-		didSet {
-		}
-	}
 
 }
 

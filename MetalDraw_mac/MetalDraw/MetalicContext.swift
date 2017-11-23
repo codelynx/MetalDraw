@@ -26,12 +26,11 @@ class MetalicContext {
 		self.current = state
 	}
 
-
-	func push(state: MetalicState) {
+    func push(state: MetalicState) {
 		self.stack.push(self.current)
 		self.current = state
 	}
-	
+
 	func pop() {
 		if let state = self.stack.pop() {
 			self.current = state
@@ -45,20 +44,20 @@ class MetalicContext {
 	var renderPassDescriptor: MTLRenderPassDescriptor {
 		return self.current.renderPassDescriptor
 	}
-	
+
 	var transform: float4x4 {
 		return self.current.transform
 	}
-	
+
 	subscript(key: String) -> Any? {
 		get { return self.current.dictionary[key] }
 		set { self.current.dictionary[key] = newValue }
 	}
-	
+
 	var device: MTLDevice {
 		return commandQueue.device
 	}
-	
+
 	func makeBuffer<T>(items: [T]) -> MetalicBuffer<T>? {
 		return device.makeBuffer(elements: items)
 	}

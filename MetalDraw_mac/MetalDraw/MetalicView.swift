@@ -16,9 +16,8 @@ extension Selector {
 	//static let metalicSceneNeedsDisplay = #selector(MetalicView.metalicSceneNeedsDisplay(:_))
 }
 
+
 class MetalicView: NSView {
-
-
 
     static let pixelFormat: MTLPixelFormat = .bgra8Unorm
 
@@ -87,7 +86,7 @@ class MetalicView: NSView {
 		self.scrollView.maxMagnification = 4
 		self.scrollView.minMagnification = 0.5
 
-		NotificationCenter.default.addObserver(self, selector: #selector(displayScene), name:.DisplayMetalicScene, object: self)
+		NotificationCenter.default.addObserver(self, selector: #selector(displayScene), name: .DisplayMetalicScene, object: self)
 		self.enableSetNeedsDisplay = true
 		return {}
 	}()

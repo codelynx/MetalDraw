@@ -49,34 +49,33 @@ class MetalicSceneView: MTKView, MTKViewDelegate {
 
 	func draw(in view: MTKView) {
 		print("bounds: \(self.bounds)")
-		if let drawable = self.currentDrawable {
-            let commandQueue = MetalicDevice.shared.commandQueue
+        guard let drawable = self.currentDrawable else { return }
+        let commandQueue = MetalicDevice.shared.commandQueue
 
-			let renderPassDescriptor = MTLRenderPassDescriptor()
-			renderPassDescriptor.colorAttachments[0].texture = drawable.texture // error on simulator target
-			renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(1, 1, 1, 1)
-			renderPassDescriptor.colorAttachments[0].loadAction = .clear
-			renderPassDescriptor.colorAttachments[0].storeAction = .store
+        let renderPassDescriptor = MTLRenderPassDescriptor()
+        renderPassDescriptor.colorAttachments[0].texture = drawable.texture // error on simulator target
+        renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(1, 1, 1, 1)
+        renderPassDescriptor.colorAttachments[0].loadAction = .clear
+        renderPassDescriptor.colorAttachments[0].storeAction = .store
 
 
-			if let commandBuffer = commandQueue.makeCommandBuffer(),
-                let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) {
-				commandEncoder.endEncoding()
-				commandBuffer.commit()
-			}
+        if let commandBuffer = commandQueue.makeCommandBuffer(),
+            let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) {
+            commandEncoder.endEncoding()
+            commandBuffer.commit()
+        }
 
-			if let scene = self.scene, let t = self.renderingTransform {
-				let t = float4x4(affineTransform: t)
-				let state = MetalicState(renderPassDescriptor: renderPassDescriptor, transform: t, dictionary: [:])
-				let context = MetalicContext(commandQueue: commandQueue, state: state)
-				scene.render(context: context)
-			}
+        if let scene = self.scene, let t = self.renderingTransform {
+            let t = float4x4(affineTransform: t)
+            let state = MetalicState(renderPassDescriptor: renderPassDescriptor, transform: t, dictionary: [:])
+            let context = MetalicContext(commandQueue: commandQueue, state: state)
+            scene.render(context: context)
+        }
 
-			if let commandBuffer = commandQueue.makeCommandBuffer() {
-				commandBuffer.present(drawable)
-				commandBuffer.commit()
-			}
-		}
+        if let commandBuffer = commandQueue.makeCommandBuffer() {
+            commandBuffer.present(drawable)
+            commandBuffer.commit()
+        }
 	}
 
 	// MARK: -

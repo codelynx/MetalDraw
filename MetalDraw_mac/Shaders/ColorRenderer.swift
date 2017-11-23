@@ -59,7 +59,7 @@ class ColorRenderer: MetalicRenderer {
 		var uniforms = Uniforms(transform: context.transform)
 		let uniformsBuffer = device.device.makeBuffer(bytes: &uniforms, length: MemoryLayout<Uniforms>.size, options: [])
 
-		if let commandBuffer = context.makeCommandBuffer(),
+		if let commandBuffer = device.commandQueue.makeCommandBuffer(),
 		   let encoder = commandBuffer.makeRenderCommandEncoder(descriptor: context.renderPassDescriptor),
 		   let renderPipelineState = renderPipelineState {
 			encoder.setRenderPipelineState(renderPipelineState)

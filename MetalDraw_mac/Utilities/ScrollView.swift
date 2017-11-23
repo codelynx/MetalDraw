@@ -14,14 +14,20 @@ public protocol ScrollViewDelegate : class {
 public class ScrollView : NSScrollView {
     public weak var delegate : ScrollViewDelegate? = nil
 
+    open func configure() {
+
+    }
+
     public override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         _config()
+        configure()
     }
 
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
         _config()
+        configure()
     }
 
     @objc private func _observeScrolling(_ notification : Notification) {

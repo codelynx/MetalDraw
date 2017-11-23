@@ -87,12 +87,12 @@ class MetalicView: NSView {
 		self.scrollView.maxMagnification = 4
 		self.scrollView.minMagnification = 0.5
 
-		NotificationCenter.default.addObserver(self, selector: #selector(MetalicView.redisplayScene), name:.displayMetalicScene, object: self)
+		NotificationCenter.default.addObserver(self, selector: #selector(MetalicView.displayScene), name:.displayMetalicScene, object: self)
 		self.enableSetNeedsDisplay = true
 		return {}
 	}()
 
-	@objc func redisplayScene(_ notification: NSNotification) {
+	@objc func displayScene(_ notification: NSNotification) {
 		if let sourceScene = notification.object as? MetalicScene, let destinationScene = self.scene, sourceScene == destinationScene {
 			self.sceneView.setNeedsDisplay(self.bounds)
 		}

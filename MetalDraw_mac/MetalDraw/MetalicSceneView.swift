@@ -41,32 +41,10 @@ class MetalicSceneView: MTKView, MTKViewDelegate {
 
 	// MARK: -
 
-	var drawingTransform: CGAffineTransform? {
-		if let contentView = self.window?.contentView,
-		   let scene = self.scene {
-			let rectInWindow = self.convert(self.bounds, to: contentView)
-			let transform0 = CGAffineTransform(translationX: 0, y: self.bounds.height).scaledBy(x: 1, y: -1)
-			let transform1 = scene.bounds.transform(to: rectInWindow)
-			let transform2 = self.bounds.transform(to: CGRect(x: -1.0, y: -1.0, width: 2.0, height: 2.0))
-			let transform3 = CGAffineTransform.identity.translatedBy(x: 0, y: +1).scaledBy(x: 1, y: -1).translatedBy(x: 0, y: 1)
-			#if os(iOS)
-			let transform = transform1 * transform2 * transform3
-			#elseif os(macOS)
-			let transform = transform0 * transform1 * transform2
-			#endif
-			return transform
-		}
-		return nil
-	}
-
 	var renderingTransform: CGAffineTransform? {
 		guard let scene = self.scene else { return nil }
-//		guard let contentView = self.window?.contentView else { return nil }
-
-		let rect = scene.bounds //self.convert(self.bounds, to: contentView)
+		let rect = scene.bounds
 		let center = rect.midXmidY
-
-//		let t1 = CGAffineTransform(translationX: -center.x, y: -center.y * 0.5)
 		let t1 = CGAffineTransform(translationX: -center.x, y: -center.y)
 		let t2 = CGAffineTransform(scaleX: 2.0 / rect.width, y: 2.0 / rect.height)
 		let t3 = CGAffineTransform(scaleX: 1.0, y: -1.0)
@@ -113,4 +91,25 @@ class MetalicSceneView: MTKView, MTKViewDelegate {
 	func setNeedsDisplay() {
 		self.setNeedsDisplay(self.bounds)
 	}
+
+	// MARK: -
+
+	override func mouseDown(with event: NSEvent) {
+		self.scene?.mouseDown(with: MetalicEvent(event: event, sceneView: self))
+	}
+
+	override func mouseMoved(with event: NSEvent) {
+		self.scene?.mouseMoved(with: MetalicEvent(event: event, sceneView: self))
+	}
+
+	override func mouseDragged(with event: NSEvent) {
+		self.scene?.mouseDragged(with: MetalicEvent(event: event, sceneView: self))
+	}
+
+	override func mouseUp(with event: NSEvent) {
+		self.scene?.mouseUp(with: MetalicEvent(event: event, sceneView: self))
+	}
+
+
+
 }

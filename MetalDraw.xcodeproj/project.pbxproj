@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC0700BE1FC7317A00BFB914 /* MetalicEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0700BD1FC7317A00BFB914 /* MetalicEvent.swift */; };
 		CCA5E3621FC389C300AC275F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3611FC389C300AC275F /* AppDelegate.swift */; };
 		CCA5E3641FC389C300AC275F /* MetalDrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3631FC389C300AC275F /* MetalDrawViewController.swift */; };
 		CCA5E3661FC389C300AC275F /* MetalDrawDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3651FC389C300AC275F /* MetalDrawDocument.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC0700BD1FC7317A00BFB914 /* MetalicEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalicEvent.swift; sourceTree = "<group>"; };
 		CCA5E35E1FC389C300AC275F /* MetalDraw_mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalDraw_mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA5E3611FC389C300AC275F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCA5E3631FC389C300AC275F /* MetalDrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalDrawViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				CCA5E3731FC38E5200AC275F /* MetalicView.swift */,
 				CCA5E38F1FC400E100AC275F /* SampleScene.swift */,
 				CCC53DFD1FC5375F00B56678 /* MTLDevice+Metalic.swift */,
+				CC0700BD1FC7317A00BFB914 /* MetalicEvent.swift */,
 			);
 			path = MetalDraw;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				CCA5E3661FC389C300AC275F /* MetalDrawDocument.swift in Sources */,
 				CCA5E3821FC3D1AC00AC275F /* ColorShader.metal in Sources */,
 				CCA5E37F1FC3A4D600AC275F /* CoreGraphics+Z.swift in Sources */,
+				CC0700BE1FC7317A00BFB914 /* MetalicEvent.swift in Sources */,
 				CCA5E37D1FC393A500AC275F /* FlippedClipView.swift in Sources */,
 				CCA5E38E1FC3F9DA00AC275F /* MetalicNode.swift in Sources */,
 			);

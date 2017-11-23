@@ -24,9 +24,9 @@ class MetalicBuffer<T> {
         return buffer.device
     }
 
-	var buffer: MTLBuffer
-	var count: Int
-	var capacity: Int
+	private(set) var buffer: MTLBuffer
+	private(set) var count: Int
+	private(set) var capacity: Int
 
 	init(device: MTLDevice, vertices: [T], capacity: Int? = nil) throws {
 		assert(vertices.count <= capacity ?? vertices.count)
@@ -57,10 +57,10 @@ class MetalicBuffer<T> {
 			let count = self.count
 			let length = MemoryLayout<T>.stride * (count + vertices.count)
 			guard let buffer = self.device.makeBuffer(length: length, options: [.storageModeShared]) else { throw MetalicError.failedMakingBuffer }
-			let sourceArrayPtr = UnsafeMutablePointer<T>(OpaquePointer(self.buffer.contents()))
-			let sourceArray = UnsafeMutableBufferPointer<T>(start: sourceArrayPtr, count: count)
-			let destinationArrayPtr = UnsafeMutablePointer<T>(OpaquePointer(buffer.contents()))
-			let destinationArray = UnsafeMutableBufferPointer<T>(start: destinationArrayPtr, count: count + vertices.count)
+
+			let sourceArray = UnsafeMutableBufferPointer<T>(buffer: self.buffer, count: count)
+
+			let destinationArray = UnsafeMutableBufferPointer<T>(buffer: self.buffer, count: count + vertices.count)
 
 			(0 ..< count).forEach { destinationArray[$0] = sourceArray[$0] }
 			(0 ..< vertices.count).forEach { destinationArray[count + $0] = vertices[$0] }
@@ -74,8 +74,8 @@ class MetalicBuffer<T> {
 
 	func set(_ vertices: [T]) throws {
 		if vertices.count < self.capacity {
-			let destinationArrayPtr = UnsafeMutablePointer<T>(OpaquePointer(buffer.contents()))
-			let destinationArray = UnsafeMutableBufferPointer<T>(start: destinationArrayPtr, count: count + vertices.count)
+
+			let destinationArray = UnsafeMutableBufferPointer<T>(buffer: buffer, count: count + vertices.count)
 			(0 ..< vertices.count).forEach { destinationArray[$0] = vertices[$0]  }
 			self.count = vertices.count
 		}

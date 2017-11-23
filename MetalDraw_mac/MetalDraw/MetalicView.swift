@@ -27,14 +27,12 @@ class MetallicScrollView : ScrollView {
         borderType = .noBorder
         drawsBackground = false
         translatesAutoresizingMaskIntoConstraints = false
-        allowsMagnification = false
+        allowsMagnification = true
     }
 }
 
 
-class MetalicView: NSView {
-
-
+class MetalicView: NSView, ScrollViewDelegate {
 
 	var scene: MetalicScene? {
 		get { return self.sceneView.scene }
@@ -63,9 +61,7 @@ class MetalicView: NSView {
 
 	private (set) lazy var scrollView: NSScrollView = {
 		let scrollView = MetallicScrollView(frame: self.bounds)
-		NotificationCenter.default.addObserver(self, selector: #selector(scrollContentDidChange),
-					name: NSView.boundsDidChangeNotification, object: nil)
-
+        scrollView.delegate = self
 		return scrollView
 	}()
 
@@ -106,9 +102,9 @@ class MetalicView: NSView {
 		}
 	}
 
-	@objc func scrollContentDidChange(_ notification: Notification) {
-		self.sceneView.setNeedsDisplay(self.sceneView.bounds)
-	}
+    func scrollViewDidChange(_ scrollView: ScrollView) {
+        self.sceneView.setNeedsDisplay(self.sceneView.bounds)
+    }
 
 	var allowsMagnification: Bool {
 		get { return self.scrollView.allowsMagnification }

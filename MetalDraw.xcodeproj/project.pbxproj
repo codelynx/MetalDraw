@@ -32,7 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		372ED8471FC74E0E005EDD6A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = MetalDraw_mac/Utilities/Extensions.swift; sourceTree = "<group>"; };
+		372ED8471FC74E0E005EDD6A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CC0700BD1FC7317A00BFB914 /* MetalicEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalicEvent.swift; sourceTree = "<group>"; };
 		CCA5E35E1FC389C300AC275F /* MetalDraw_mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalDraw_mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA5E3611FC389C300AC275F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +73,6 @@
 		CCA5E3531FC3899E00AC275F = {
 			isa = PBXGroup;
 			children = (
-				372ED8471FC74E0E005EDD6A /* Extensions.swift */,
 				CCA5E3601FC389C300AC275F /* MetalDraw_mac */,
 				CCA5E35F1FC389C300AC275F /* Products */,
 			);
@@ -133,6 +132,7 @@
 		CCA5E37B1FC3938500AC275F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				372ED8471FC74E0E005EDD6A /* Extensions.swift */,
 				CCA5E37E1FC3A4D600AC275F /* CoreGraphics+Z.swift */,
 				CCA5E37C1FC393A500AC275F /* FlippedClipView.swift */,
 				CCA5E3871FC3D75E00AC275F /* Stack.swift */,

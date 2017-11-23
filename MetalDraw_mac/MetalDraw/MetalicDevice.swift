@@ -5,16 +5,11 @@
 //  Created by Kaz Yoshikawa on 11/21/17.
 //
 
-import Foundation
 import MetalKit
 
 struct MetalicDevice {
-
+    static let shared = MetalicDevice()
 	let device: MTLDevice
-
-	static var shared: MetalicDevice? = {
-		return MetalicDevice()
-	}()
 
 	private init?() {
         guard let device = MTLCreateSystemDefaultDevice() else { return nil }

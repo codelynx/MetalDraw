@@ -14,10 +14,16 @@ extension NSView {
     }
 }
 
+extension UnsafeMutablePointer {
+    @inline(__always)
+    init(buffer: MTLBuffer) {
+        self.init(OpaquePointer(buffer.contents()))
+    }
+}
+
 extension UnsafeMutableBufferPointer {
     @inline(__always)
     init(buffer : MTLBuffer, count: Int) {
-        let ptr = UnsafeMutablePointer<Element>(OpaquePointer(buffer.contents()))
-        self.init(start: ptr, count: count)
+        self.init(start: .init(buffer: buffer), count: count)
     }
 }

@@ -18,7 +18,31 @@ enum MetalicError: Error {
 //	VertexBuffer
 //
 
-class MetalicBuffer<T> {
+class MetalicBuffer<T> : MutableCollection {
+
+    typealias Index = Int
+
+
+    var startIndex: Index {
+        return 0
+    }
+
+    var endIndex: Index {
+        return count
+    }
+
+    subscript(index: Index) -> T {
+        get {
+            return buffer.contents().assumingMemoryBound(to: T.self)[index]
+        }
+        set {
+            buffer.contents().assumingMemoryBound(to: T.self)[index] = newValue
+        }
+    }
+
+    func index(after i: Index) -> Index {
+        return i + 1
+    }
 
     var device: MTLDevice {
         return buffer.device
@@ -47,7 +71,7 @@ class MetalicBuffer<T> {
 
 	func append(_ vertices: [T]) throws {
 		if self.count + vertices.count < self.capacity {
-			let vertexArray = UnsafeMutablePointer<T>(OpaquePointer(self.buffer.contents()))
+            let vertexArray = UnsafeMutablePointer<T>(buffer: buffer)
 			for index in 0 ..< vertices.count {
 				vertexArray[self.count + index] = vertices[index]
 			}
@@ -89,7 +113,7 @@ class MetalicBuffer<T> {
 	}
 
 	var vertices: [T] {
-		let vertexArray = UnsafeMutablePointer<T>(OpaquePointer(self.buffer.contents()))
+        let vertexArray = UnsafeMutablePointer<T>(buffer: buffer)
 		return (0 ..< count).map { vertexArray[$0] }
 	}
 

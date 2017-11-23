@@ -34,7 +34,7 @@ class MetalicView: NSView {
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
     }
-	
+
 	override func layout() {
 		super.layout()
 		self.setup()
@@ -72,7 +72,7 @@ class MetalicView: NSView {
 		self.scrollView.contentView = self.clipView
 		self.clipView.addSubview(self.sceneView);
 		self.scrollView.documentView = self.sceneView
-		
+
 		self.topAnchor.constraint(equalTo: self.scrollView.topAnchor).isActive = true
 		self.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor).isActive = true
 		self.leftAnchor.constraint(equalTo: self.scrollView.leftAnchor).isActive = true
@@ -100,7 +100,7 @@ class MetalicView: NSView {
 	@objc func scrollContentDidChange(_ notification: Notification) {
 		self.sceneView.setNeedsDisplay(self.sceneView.bounds)
 	}
-	
+
 	var allowsMagnification: Bool {
 		get { return self.scrollView.allowsMagnification }
 		set { self.scrollView.allowsMagnification = newValue }

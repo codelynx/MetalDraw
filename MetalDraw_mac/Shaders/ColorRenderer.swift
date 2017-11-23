@@ -73,7 +73,7 @@ class ColorRenderer: MetalicRenderer {
 		}
 		else { print("warning: \(#file):\(#line) - \(#function)") }
 	}
-	
+
 	static var heap: MTLHeap? = {
 		let descriptor = MTLHeapDescriptor()
 		descriptor.storageMode = .shared

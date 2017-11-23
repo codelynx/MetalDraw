@@ -25,7 +25,7 @@ struct Stack<Element> {
 		}
 		return last
 	}
-	
+
 	var last: Element? { return elements.last }
 }
 

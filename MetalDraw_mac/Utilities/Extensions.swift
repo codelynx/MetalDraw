@@ -12,6 +12,11 @@ extension NSView {
     func setNeedsDisplay() {
         setNeedsDisplay(bounds)
     }
+
+    @inline(__always) @nonobjc final
+    func location(for event : NSEvent) -> NSPoint {
+        return convert(event.locationInWindow, from: nil)
+    }
 }
 
 extension UnsafeMutablePointer {

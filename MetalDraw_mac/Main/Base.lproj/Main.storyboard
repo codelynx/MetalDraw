@@ -708,11 +708,11 @@
             <objects>
                 <viewController id="5gI-5U-AMq" customClass="MetalDrawViewController" customModule="MetalDraw_mac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="ERx-hH-rdd">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="D7r-uz-kIZ" customClass="MetalicView" customModule="MetalDraw_mac" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </customView>
                         </subviews>
                         <constraints>
@@ -728,7 +728,7 @@
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="964"/>
         </scene>
     </scenes>
 </document>

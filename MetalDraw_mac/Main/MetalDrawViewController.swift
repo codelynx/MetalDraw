@@ -12,7 +12,7 @@ class MetalDrawViewController: NSViewController {
 	@IBOutlet weak var metalicView: MetalicView!
 
 	lazy var sampleScene: SampleScene = {
-		return SampleScene(bounds: self.metalicView.bounds)
+		return SampleScene(bounds: CGRect(x: 0, y: 0, width: 1024, height: 768))
 	}()
 
 	override func viewDidLoad() {

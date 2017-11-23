@@ -24,7 +24,12 @@ class MetalicView: NSView {
 
 	var scene: MetalicScene? {
 		get { return self.sceneView.scene }
-		set { self.sceneView.scene = newValue }
+		set {
+			self.sceneView.scene = newValue
+			if let scene = scene {
+				self.sceneView.frame = CGRect(x: 0, y: 0, width: scene.width, height: scene.height)
+			}
+		}
 	}
 
     override func draw(_ dirtyRect: NSRect) {
@@ -49,7 +54,7 @@ class MetalicView: NSView {
 		scrollView.borderType = .noBorder
 		scrollView.drawsBackground = false
 		scrollView.translatesAutoresizingMaskIntoConstraints = false
-		scrollView.allowsMagnification = true
+		scrollView.allowsMagnification = false
 		NotificationCenter.default.addObserver(self, selector: #selector(MetalicView.scrollContentDidChange(_:)),
 					name: NSView.boundsDidChangeNotification, object: nil)
 
@@ -63,7 +68,7 @@ class MetalicView: NSView {
 	}()
 
 	private lazy var setup: (()->()) = {
-		self.sceneView.frame = CGRect(x: 0, y: 0, width: 2000, height: 2000)
+		self.sceneView.frame = CGRect(x: 0, y: 0, width: 1024, height: 768)
 		self.addSubview(self.scrollView)
 		self.scrollView.contentView = self.clipView
 		self.clipView.addSubview(self.sceneView);

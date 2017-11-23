@@ -65,7 +65,7 @@ class ColorRenderer: MetalicRenderer {
 			encoder.setRenderPipelineState(renderPipelineState)
 			encoder.setVertexBuffer(vertexBuffer.buffer, offset: 0, index: 0)
 			encoder.setVertexBuffer(uniformsBuffer, offset: 0, index: 1)
-
+			print("\(#function)")
 			encoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertexBuffer.count)
 
 			encoder.endEncoding()

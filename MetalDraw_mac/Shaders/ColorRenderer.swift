@@ -41,7 +41,7 @@ class ColorRenderer: MetalicRenderer {
 		renderPipelineDescriptor.vertexFunction = library.makeFunction(name: "color_vertex")!
 		renderPipelineDescriptor.fragmentFunction = library.makeFunction(name: "color_fragment")!
 
-		renderPipelineDescriptor.colorAttachments[0].pixelFormat = MetalicView.pixelFormat
+		renderPipelineDescriptor.colorAttachments[0].pixelFormat = .default
 		renderPipelineDescriptor.colorAttachments[0].isBlendingEnabled = true
 		renderPipelineDescriptor.colorAttachments[0].rgbBlendOperation = .add
 		renderPipelineDescriptor.colorAttachments[0].alphaBlendOperation = .add

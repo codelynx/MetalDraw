@@ -16,10 +16,25 @@ extension Selector {
 	//static let metalicSceneNeedsDisplay = #selector(MetalicView.metalicSceneNeedsDisplay(:_))
 }
 
+extension MTLPixelFormat {
+    static let `default`: MTLPixelFormat = .bgra8Unorm
+}
+
+class MetallicScrollView : ScrollView {
+    override func configure() {
+        hasVerticalScroller = true
+        hasHorizontalScroller = true
+        borderType = .noBorder
+        drawsBackground = false
+        translatesAutoresizingMaskIntoConstraints = false
+        allowsMagnification = false
+    }
+}
+
 
 class MetalicView: NSView {
 
-    static let pixelFormat: MTLPixelFormat = .bgra8Unorm
+
 
 	var scene: MetalicScene? {
 		get { return self.sceneView.scene }
@@ -47,13 +62,7 @@ class MetalicView: NSView {
 	}()
 
 	private (set) lazy var scrollView: NSScrollView = {
-		let scrollView = NSScrollView(frame: self.bounds)
-		scrollView.hasVerticalScroller = true
-		scrollView.hasHorizontalScroller = true
-		scrollView.borderType = .noBorder
-		scrollView.drawsBackground = false
-		scrollView.translatesAutoresizingMaskIntoConstraints = false
-		scrollView.allowsMagnification = false
+		let scrollView = MetallicScrollView(frame: self.bounds)
 		NotificationCenter.default.addObserver(self, selector: #selector(scrollContentDidChange),
 					name: NSView.boundsDidChangeNotification, object: nil)
 

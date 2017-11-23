@@ -34,8 +34,8 @@ class ColorRenderer: MetalicRenderer {
 	}
 
 	static var renderPipelineState: MTLRenderPipelineState? = {
-		guard let device = device else { return nil }
-		guard let library = library else { return nil }
+//        guard let device = device else { return nil }
+		let library = device.library
 		let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
 		renderPipelineDescriptor.vertexDescriptor = vertexDescriptor
 		renderPipelineDescriptor.vertexFunction = library.makeFunction(name: "color_vertex")!
@@ -51,13 +51,13 @@ class ColorRenderer: MetalicRenderer {
 		renderPipelineDescriptor.colorAttachments[0].destinationRGBBlendFactor = .oneMinusSourceAlpha
 		renderPipelineDescriptor.colorAttachments[0].destinationAlphaBlendFactor = .oneMinusSourceAlpha
 
-		let renderPipelineState = try? device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
+		let renderPipelineState = try? device.device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
 		return renderPipelineState
 	}()
 
 	static func render(context: MetalicContext, vertexBuffer: MetalicBuffer<Vertex>) {
 		var uniforms = Uniforms(transform: context.transform)
-		let uniformsBuffer = device?.makeBuffer(bytes: &uniforms, length: MemoryLayout<Uniforms>.size, options: [])
+		let uniformsBuffer = device.device.makeBuffer(bytes: &uniforms, length: MemoryLayout<Uniforms>.size, options: [])
 
 		if let commandBuffer = context.makeCommandBuffer(),
 		   let encoder = commandBuffer.makeRenderCommandEncoder(descriptor: context.renderPassDescriptor),
@@ -78,7 +78,7 @@ class ColorRenderer: MetalicRenderer {
 		let descriptor = MTLHeapDescriptor()
 		descriptor.storageMode = .shared
 		descriptor.size = 1024 * 1024
-		return device?.makeHeap(descriptor: descriptor)
+		return device.device.makeHeap(descriptor: descriptor)
 	}()
 }
 

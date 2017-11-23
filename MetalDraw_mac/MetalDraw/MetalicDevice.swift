@@ -10,10 +10,16 @@ import MetalKit
 struct MetalicDevice {
     static let shared = MetalicDevice()
 	let device: MTLDevice
+    let library: MTLLibrary
+    let commandQueue: MTLCommandQueue
 
-	private init?() {
-        guard let device = MTLCreateSystemDefaultDevice() else { return nil }
+	private init() {
+        guard let device = MTLCreateSystemDefaultDevice(),
+            let library = device.makeDefaultLibrary(),
+            let commandQueue = device.makeCommandQueue() else { fatalError("failed to initialize device") }
         self.device = device
+        self.library = library
+        self.commandQueue = commandQueue
 	}
 
 	func makeBuffer<T>(items: [T], capacity: Int? = nil) throws -> MetalicBuffer<T> {

@@ -18,7 +18,7 @@ class MetalicSceneView: MTKView, MTKViewDelegate {
 
 	override func layout() {
 		super.layout()
-		self.device = MetalicDevice.shared?.device
+		self.device = MetalicDevice.shared.device
 		self.wantsLayer = true
 		self.layer?.backgroundColor = NSColor.white.cgColor
 		self.layer?.borderWidth = 1.0
@@ -28,16 +28,6 @@ class MetalicSceneView: MTKView, MTKViewDelegate {
 	}
 
 	override var isFlipped: Bool { return true }
-
-	// MARK: -
-
-	private (set) lazy var commandQueue: MTLCommandQueue? = {
-		if let device = MetalicView.device,
-		   let queue = self.device?.makeCommandQueue() {
-			return queue
-		}
-		return nil
-	}()
 
 	// MARK: -
 
@@ -59,8 +49,8 @@ class MetalicSceneView: MTKView, MTKViewDelegate {
 
 	func draw(in view: MTKView) {
 		print("bounds: \(self.bounds)")
-		if let drawable = self.currentDrawable,
-		   let commandQueue = self.commandQueue {
+		if let drawable = self.currentDrawable {
+            let commandQueue = MetalicDevice.shared.commandQueue
 
 			let renderPassDescriptor = MTLRenderPassDescriptor()
 			renderPassDescriptor.colorAttachments[0].texture = drawable.texture // error on simulator target
@@ -68,8 +58,9 @@ class MetalicSceneView: MTKView, MTKViewDelegate {
 			renderPassDescriptor.colorAttachments[0].loadAction = .clear
 			renderPassDescriptor.colorAttachments[0].storeAction = .store
 
-			if let commandBuffer = self.commandQueue?.makeCommandBuffer(),
-			   let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) {
+
+			if let commandBuffer = commandQueue.makeCommandBuffer(),
+                let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) {
 				commandEncoder.endEncoding()
 				commandBuffer.commit()
 			}

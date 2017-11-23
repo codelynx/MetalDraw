@@ -9,11 +9,11 @@ import Foundation
 import MetalKit
 
 protocol MetalicRenderer {
-	static var device: MTLDevice? { get }
-	static var library: MTLLibrary? { get }
+	static var device: MetalicDevice { get }
+
 }
 
 extension MetalicRenderer {
-	static var device: MTLDevice? { return MetalicDevice.shared?.device }
-	static var library: MTLLibrary? { return self.device?.makeDefaultLibrary() }
+	static var device: MetalicDevice { return .shared }
+
 }

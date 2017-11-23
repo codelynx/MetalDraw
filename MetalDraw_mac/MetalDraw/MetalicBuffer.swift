@@ -20,14 +20,17 @@ enum MetalicError: Error {
 
 class MetalicBuffer<T> {
 
-	let device: MTLDevice
+    var device: MTLDevice {
+        return buffer.device
+    }
+
 	var buffer: MTLBuffer
 	var count: Int
 	var capacity: Int
 
 	init(device: MTLDevice, vertices: [T], capacity: Int? = nil) throws {
 		assert(vertices.count <= capacity ?? vertices.count)
-		self.device = device
+
 		self.count = vertices.count
 		let capacity = capacity ?? vertices.count
 		let length = MemoryLayout<T>.stride * capacity

@@ -18,8 +18,6 @@ extension Selector {
 
 class MetalicView: NSView {
 
-	static let device = MetalicDevice.shared
-
     static let pixelFormat: MTLPixelFormat = .bgra8Unorm
 
 	var scene: MetalicScene? {

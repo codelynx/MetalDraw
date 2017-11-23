@@ -18,6 +18,8 @@ extension Selector {
 
 class MetalicView: NSView {
 
+
+
     static let pixelFormat: MTLPixelFormat = .bgra8Unorm
 
 	var scene: MetalicScene? {
@@ -92,7 +94,7 @@ class MetalicView: NSView {
 
 	@objc func displayScene(_ notification: NSNotification) {
 		if let sourceScene = notification.object as? MetalicScene, let destinationScene = self.scene, sourceScene == destinationScene {
-			self.sceneView.setNeedsDisplay(self.bounds)
+			self.sceneView.setNeedsDisplay()
 		}
 	}
 

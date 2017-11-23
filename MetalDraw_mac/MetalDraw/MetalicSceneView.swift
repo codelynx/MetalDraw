@@ -12,7 +12,7 @@ class MetalicSceneView: MTKView, MTKViewDelegate {
 
 	var scene: MetalicScene? {
 		didSet {
-			self.setNeedsDisplay(self.bounds)
+			setNeedsDisplay()
 		}
 	}
 
@@ -77,10 +77,6 @@ class MetalicSceneView: MTKView, MTKViewDelegate {
 				commandBuffer.commit()
 			}
 		}
-	}
-
-	func setNeedsDisplay() {
-		self.setNeedsDisplay(self.bounds)
 	}
 
 	// MARK: -

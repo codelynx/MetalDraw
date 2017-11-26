@@ -8,7 +8,7 @@
 import Cocoa
 import simd
 
-class ColorRenderer: MetalicRenderer {
+class ColorRenderer: MetallicRenderer {
 
 	struct Vertex {
 		var x, y, z, w, r, g, b, a: Float
@@ -55,7 +55,7 @@ class ColorRenderer: MetalicRenderer {
 		return renderPipelineState
 	}()
 
-	static func render(context: MetalicContext, vertexBuffer: MetalicBuffer<Vertex>) {
+	static func render(context: MetallicContext, vertexBuffer: MetallicBuffer<Vertex>) {
 		var uniforms = Uniforms(transform: context.transform)
 		let uniformsBuffer = device.device.makeBuffer(bytes: &uniforms, length: MemoryLayout<Uniforms>.size, options: [])
 
@@ -82,7 +82,7 @@ class ColorRenderer: MetalicRenderer {
 	}()
 }
 
-extension MetalicContext {
+extension MetallicContext {
 
 	func renderColor(verticies: [ColorRenderer.Vertex]) {
 		if let buffer = self.makeBuffer(items: verticies) {

@@ -9,33 +9,33 @@
 /* Begin PBXBuildFile section */
 		372ED8481FC74E0E005EDD6A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372ED8471FC74E0E005EDD6A /* Extensions.swift */; };
 		372ED84A1FC74F22005EDD6A /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372ED8491FC74F21005EDD6A /* ScrollView.swift */; };
-		CC0700BE1FC7317A00BFB914 /* MetalicEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0700BD1FC7317A00BFB914 /* MetalicEvent.swift */; };
+		CC0700BE1FC7317A00BFB914 /* MetallicEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0700BD1FC7317A00BFB914 /* MetallicEvent.swift */; };
 		CCA5E3621FC389C300AC275F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3611FC389C300AC275F /* AppDelegate.swift */; };
 		CCA5E3641FC389C300AC275F /* MetalDrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3631FC389C300AC275F /* MetalDrawViewController.swift */; };
 		CCA5E3661FC389C300AC275F /* MetalDrawDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3651FC389C300AC275F /* MetalDrawDocument.swift */; };
 		CCA5E3681FC389C300AC275F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCA5E3671FC389C300AC275F /* Assets.xcassets */; };
 		CCA5E36B1FC389C300AC275F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCA5E3691FC389C300AC275F /* Main.storyboard */; };
-		CCA5E3741FC38E5200AC275F /* MetalicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3731FC38E5200AC275F /* MetalicView.swift */; };
-		CCA5E3781FC3907000AC275F /* MetalicSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3771FC3907000AC275F /* MetalicSceneView.swift */; };
+		CCA5E3741FC38E5200AC275F /* MetallicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3731FC38E5200AC275F /* MetallicView.swift */; };
+		CCA5E3781FC3907000AC275F /* MetallicSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3771FC3907000AC275F /* MetallicSceneView.swift */; };
 		CCA5E37D1FC393A500AC275F /* FlippedClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E37C1FC393A500AC275F /* FlippedClipView.swift */; };
 		CCA5E37F1FC3A4D600AC275F /* CoreGraphics+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E37E1FC3A4D600AC275F /* CoreGraphics+Z.swift */; };
 		CCA5E3821FC3D1AC00AC275F /* ColorShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3811FC3D1AC00AC275F /* ColorShader.metal */; };
 		CCA5E3841FC3D20300AC275F /* ColorRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3831FC3D20300AC275F /* ColorRenderer.swift */; };
 		CCA5E3881FC3D75E00AC275F /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3871FC3D75E00AC275F /* Stack.swift */; };
-		CCA5E38A1FC3F94D00AC275F /* MetalicContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3891FC3F94D00AC275F /* MetalicContext.swift */; };
-		CCA5E38C1FC3F98100AC275F /* MetalicScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E38B1FC3F98100AC275F /* MetalicScene.swift */; };
-		CCA5E38E1FC3F9DA00AC275F /* MetalicNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E38D1FC3F9DA00AC275F /* MetalicNode.swift */; };
+		CCA5E38A1FC3F94D00AC275F /* MetallicContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3891FC3F94D00AC275F /* MetallicContext.swift */; };
+		CCA5E38C1FC3F98100AC275F /* MetallicScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E38B1FC3F98100AC275F /* MetallicScene.swift */; };
+		CCA5E38E1FC3F9DA00AC275F /* MetallicNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E38D1FC3F9DA00AC275F /* MetallicNode.swift */; };
 		CCA5E3901FC400E100AC275F /* SampleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E38F1FC400E100AC275F /* SampleScene.swift */; };
-		CCA5E3921FC4176A00AC275F /* MetalicDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3911FC4176A00AC275F /* MetalicDevice.swift */; };
-		CCA5E3941FC41AA800AC275F /* MetalicRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3931FC41AA800AC275F /* MetalicRenderer.swift */; };
-		CCA5E3961FC473D400AC275F /* MetalicBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3951FC473D400AC275F /* MetalicBuffer.swift */; };
-		CCC53DFE1FC5375F00B56678 /* MTLDevice+Metalic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53DFD1FC5375F00B56678 /* MTLDevice+Metalic.swift */; };
+		CCA5E3921FC4176A00AC275F /* MetallicDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3911FC4176A00AC275F /* MetallicDevice.swift */; };
+		CCA5E3941FC41AA800AC275F /* MetallicRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3931FC41AA800AC275F /* MetallicRenderer.swift */; };
+		CCA5E3961FC473D400AC275F /* MetallicBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3951FC473D400AC275F /* MetallicBuffer.swift */; };
+		CCC53DFE1FC5375F00B56678 /* MTLDevice+Metallic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53DFD1FC5375F00B56678 /* MTLDevice+Metallic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		372ED8471FC74E0E005EDD6A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		372ED8491FC74F21005EDD6A /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
-		CC0700BD1FC7317A00BFB914 /* MetalicEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalicEvent.swift; sourceTree = "<group>"; };
+		CC0700BD1FC7317A00BFB914 /* MetallicEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicEvent.swift; sourceTree = "<group>"; };
 		CCA5E35E1FC389C300AC275F /* MetalDraw_mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalDraw_mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA5E3611FC389C300AC275F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCA5E3631FC389C300AC275F /* MetalDrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalDrawViewController.swift; sourceTree = "<group>"; };
@@ -44,21 +44,21 @@
 		CCA5E36A1FC389C300AC275F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CCA5E36C1FC389C300AC275F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCA5E36D1FC389C300AC275F /* MetalDraw_mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetalDraw_mac.entitlements; sourceTree = "<group>"; };
-		CCA5E3731FC38E5200AC275F /* MetalicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalicView.swift; sourceTree = "<group>"; };
-		CCA5E3771FC3907000AC275F /* MetalicSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalicSceneView.swift; sourceTree = "<group>"; };
+		CCA5E3731FC38E5200AC275F /* MetallicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicView.swift; sourceTree = "<group>"; };
+		CCA5E3771FC3907000AC275F /* MetallicSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicSceneView.swift; sourceTree = "<group>"; };
 		CCA5E37C1FC393A500AC275F /* FlippedClipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlippedClipView.swift; sourceTree = "<group>"; };
 		CCA5E37E1FC3A4D600AC275F /* CoreGraphics+Z.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreGraphics+Z.swift"; sourceTree = "<group>"; };
 		CCA5E3811FC3D1AC00AC275F /* ColorShader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ColorShader.metal; sourceTree = "<group>"; };
 		CCA5E3831FC3D20300AC275F /* ColorRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRenderer.swift; sourceTree = "<group>"; };
 		CCA5E3871FC3D75E00AC275F /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
-		CCA5E3891FC3F94D00AC275F /* MetalicContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalicContext.swift; sourceTree = "<group>"; };
-		CCA5E38B1FC3F98100AC275F /* MetalicScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalicScene.swift; sourceTree = "<group>"; };
-		CCA5E38D1FC3F9DA00AC275F /* MetalicNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalicNode.swift; sourceTree = "<group>"; };
+		CCA5E3891FC3F94D00AC275F /* MetallicContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetallicContext.swift; sourceTree = "<group>"; };
+		CCA5E38B1FC3F98100AC275F /* MetallicScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetallicScene.swift; sourceTree = "<group>"; };
+		CCA5E38D1FC3F9DA00AC275F /* MetallicNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicNode.swift; sourceTree = "<group>"; };
 		CCA5E38F1FC400E100AC275F /* SampleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleScene.swift; sourceTree = "<group>"; };
-		CCA5E3911FC4176A00AC275F /* MetalicDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalicDevice.swift; sourceTree = "<group>"; };
-		CCA5E3931FC41AA800AC275F /* MetalicRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalicRenderer.swift; sourceTree = "<group>"; };
-		CCA5E3951FC473D400AC275F /* MetalicBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalicBuffer.swift; sourceTree = "<group>"; };
-		CCC53DFD1FC5375F00B56678 /* MTLDevice+Metalic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTLDevice+Metalic.swift"; sourceTree = "<group>"; };
+		CCA5E3911FC4176A00AC275F /* MetallicDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicDevice.swift; sourceTree = "<group>"; };
+		CCA5E3931FC41AA800AC275F /* MetallicRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicRenderer.swift; sourceTree = "<group>"; };
+		CCA5E3951FC473D400AC275F /* MetallicBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetallicBuffer.swift; sourceTree = "<group>"; };
+		CCC53DFD1FC5375F00B56678 /* MTLDevice+Metallic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTLDevice+Metallic.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,17 +116,17 @@
 		CCA5E3721FC38E0800AC275F /* MetalDraw */ = {
 			isa = PBXGroup;
 			children = (
-				CCA5E3951FC473D400AC275F /* MetalicBuffer.swift */,
-				CCA5E3891FC3F94D00AC275F /* MetalicContext.swift */,
-				CCA5E3911FC4176A00AC275F /* MetalicDevice.swift */,
-				CCA5E38D1FC3F9DA00AC275F /* MetalicNode.swift */,
-				CCA5E3931FC41AA800AC275F /* MetalicRenderer.swift */,
-				CCA5E38B1FC3F98100AC275F /* MetalicScene.swift */,
-				CCA5E3771FC3907000AC275F /* MetalicSceneView.swift */,
-				CCA5E3731FC38E5200AC275F /* MetalicView.swift */,
+				CCA5E3951FC473D400AC275F /* MetallicBuffer.swift */,
+				CCA5E3891FC3F94D00AC275F /* MetallicContext.swift */,
+				CCA5E3911FC4176A00AC275F /* MetallicDevice.swift */,
+				CCA5E38D1FC3F9DA00AC275F /* MetallicNode.swift */,
+				CCA5E3931FC41AA800AC275F /* MetallicRenderer.swift */,
+				CCA5E38B1FC3F98100AC275F /* MetallicScene.swift */,
+				CCA5E3771FC3907000AC275F /* MetallicSceneView.swift */,
+				CCA5E3731FC38E5200AC275F /* MetallicView.swift */,
 				CCA5E38F1FC400E100AC275F /* SampleScene.swift */,
-				CCC53DFD1FC5375F00B56678 /* MTLDevice+Metalic.swift */,
-				CC0700BD1FC7317A00BFB914 /* MetalicEvent.swift */,
+				CCC53DFD1FC5375F00B56678 /* MTLDevice+Metallic.swift */,
+				CC0700BD1FC7317A00BFB914 /* MetallicEvent.swift */,
 			);
 			path = MetalDraw;
 			sourceTree = "<group>";
@@ -226,23 +226,23 @@
 				372ED8481FC74E0E005EDD6A /* Extensions.swift in Sources */,
 				CCA5E3901FC400E100AC275F /* SampleScene.swift in Sources */,
 				CCA5E3841FC3D20300AC275F /* ColorRenderer.swift in Sources */,
-				CCA5E3961FC473D400AC275F /* MetalicBuffer.swift in Sources */,
-				CCA5E3921FC4176A00AC275F /* MetalicDevice.swift in Sources */,
+				CCA5E3961FC473D400AC275F /* MetallicBuffer.swift in Sources */,
+				CCA5E3921FC4176A00AC275F /* MetallicDevice.swift in Sources */,
 				CCA5E3641FC389C300AC275F /* MetalDrawViewController.swift in Sources */,
 				CCA5E3621FC389C300AC275F /* AppDelegate.swift in Sources */,
 				CCA5E3881FC3D75E00AC275F /* Stack.swift in Sources */,
-				CCA5E3941FC41AA800AC275F /* MetalicRenderer.swift in Sources */,
-				CCA5E38C1FC3F98100AC275F /* MetalicScene.swift in Sources */,
-				CCA5E3781FC3907000AC275F /* MetalicSceneView.swift in Sources */,
-				CCA5E3741FC38E5200AC275F /* MetalicView.swift in Sources */,
-				CCC53DFE1FC5375F00B56678 /* MTLDevice+Metalic.swift in Sources */,
-				CCA5E38A1FC3F94D00AC275F /* MetalicContext.swift in Sources */,
+				CCA5E3941FC41AA800AC275F /* MetallicRenderer.swift in Sources */,
+				CCA5E38C1FC3F98100AC275F /* MetallicScene.swift in Sources */,
+				CCA5E3781FC3907000AC275F /* MetallicSceneView.swift in Sources */,
+				CCA5E3741FC38E5200AC275F /* MetallicView.swift in Sources */,
+				CCC53DFE1FC5375F00B56678 /* MTLDevice+Metallic.swift in Sources */,
+				CCA5E38A1FC3F94D00AC275F /* MetallicContext.swift in Sources */,
 				CCA5E3661FC389C300AC275F /* MetalDrawDocument.swift in Sources */,
 				CCA5E3821FC3D1AC00AC275F /* ColorShader.metal in Sources */,
 				CCA5E37F1FC3A4D600AC275F /* CoreGraphics+Z.swift in Sources */,
-				CC0700BE1FC7317A00BFB914 /* MetalicEvent.swift in Sources */,
+				CC0700BE1FC7317A00BFB914 /* MetallicEvent.swift in Sources */,
 				CCA5E37D1FC393A500AC275F /* FlippedClipView.swift in Sources */,
-				CCA5E38E1FC3F9DA00AC275F /* MetalicNode.swift in Sources */,
+				CCA5E38E1FC3F9DA00AC275F /* MetallicNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +308,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-                DEVELOPMENT_TEAM = 2P97EM4L4N;
+				DEVELOPMENT_TEAM = 2P97EM4L4N;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -375,7 +375,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-                DEVELOPMENT_TEAM = 2P97EM4L4N;
+				DEVELOPMENT_TEAM = 2P97EM4L4N;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;

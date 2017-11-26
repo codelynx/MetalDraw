@@ -8,7 +8,7 @@
 import Foundation
 
 
-class SampleScene: MetalicScene {
+class SampleScene: MetallicScene {
 
 	typealias Vertex = ColorRenderer.Vertex
 
@@ -26,7 +26,7 @@ class SampleScene: MetalicScene {
 //	let pt2 = ColorRenderer.Vertex(x: -1, y: 1, z: 0, w: 1, r: 0, g: 1, b: 0, a: 0.5)
 //	let pt3 = ColorRenderer.Vertex(x: +1, y: 1, z: 0, w: 1, r: 0, g: 0, b: 1, a: 0.5)
 
-	override func render(context: MetalicContext) {
+	override func render(context: MetallicContext) {
 		context.renderColor(verticies: [pt1, pt2, pt3])
 	}
 

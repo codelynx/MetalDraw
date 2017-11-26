@@ -1,5 +1,5 @@
 //
-//  MetalicSceneView.swift
+//  MetallicSceneView.swift
 //  MetalDraw_mac
 //
 //  Created by Kaz Yoshikawa on 11/20/17.
@@ -8,9 +8,9 @@
 import Cocoa
 import MetalKit
 
-class MetalicSceneView: MTKView, MTKViewDelegate {
+class MetallicSceneView: MTKView, MTKViewDelegate {
 
-	var scene: MetalicScene? {
+	var scene: MetallicScene? {
 		didSet {
 			setNeedsDisplay()
 		}
@@ -18,7 +18,7 @@ class MetalicSceneView: MTKView, MTKViewDelegate {
 
 	override func layout() {
 		super.layout()
-		self.device = MetalicDevice.shared.device
+		self.device = MetallicDevice.shared.device
 		self.wantsLayer = true
 		self.layer?.backgroundColor = NSColor.white.cgColor
 		self.layer?.borderWidth = 1.0
@@ -50,7 +50,7 @@ class MetalicSceneView: MTKView, MTKViewDelegate {
 	func draw(in view: MTKView) {
 		print("bounds: \(self.bounds)")
         guard let drawable = self.currentDrawable else { return }
-        let commandQueue = MetalicDevice.shared.commandQueue
+        let commandQueue = MetallicDevice.shared.commandQueue
 
         let renderPassDescriptor = MTLRenderPassDescriptor()
         renderPassDescriptor.colorAttachments[0].texture = drawable.texture // error on simulator target
@@ -67,8 +67,8 @@ class MetalicSceneView: MTKView, MTKViewDelegate {
 
         if let scene = self.scene, let t = self.renderingTransform {
             let t = float4x4(affineTransform: t)
-            let state = MetalicState(renderPassDescriptor: renderPassDescriptor, transform: t, dictionary: [:])
-            let context = MetalicContext(commandQueue: commandQueue, state: state)
+            let state = MetallicState(renderPassDescriptor: renderPassDescriptor, transform: t, dictionary: [:])
+            let context = MetallicContext(commandQueue: commandQueue, state: state)
             scene.render(context: context)
         }
 
@@ -81,19 +81,19 @@ class MetalicSceneView: MTKView, MTKViewDelegate {
 	// MARK: -
 
 	override func mouseDown(with event: NSEvent) {
-		self.scene?.mouseDown(with: MetalicEvent(event: event, sceneView: self))
+		self.scene?.mouseDown(with: MetallicEvent(event: event, sceneView: self))
 	}
 
 	override func mouseMoved(with event: NSEvent) {
-		self.scene?.mouseMoved(with: MetalicEvent(event: event, sceneView: self))
+		self.scene?.mouseMoved(with: MetallicEvent(event: event, sceneView: self))
 	}
 
 	override func mouseDragged(with event: NSEvent) {
-		self.scene?.mouseDragged(with: MetalicEvent(event: event, sceneView: self))
+		self.scene?.mouseDragged(with: MetallicEvent(event: event, sceneView: self))
 	}
 
 	override func mouseUp(with event: NSEvent) {
-		self.scene?.mouseUp(with: MetalicEvent(event: event, sceneView: self))
+		self.scene?.mouseUp(with: MetallicEvent(event: event, sceneView: self))
 	}
 
 

@@ -9,11 +9,11 @@ import Cocoa
 import MetalKit
 
 extension Notification.Name {
-	static let DisplayMetalicScene = Notification.Name("DisplayMetalicScene")
+	static let displayMetallicScene = Notification.Name("DisplayMetallicScene")
 }
 
 extension Selector {
-	//static let metalicSceneNeedsDisplay = #selector(MetalicView.metalicSceneNeedsDisplay(:_))
+	//static let metallicSceneNeedsDisplay = #selector(MetallicView.metallicSceneNeedsDisplay(:_))
 }
 
 extension MTLPixelFormat {
@@ -32,9 +32,9 @@ class MetallicScrollView : ScrollView {
 }
 
 
-class MetalicView: NSView, ScrollViewDelegate {
+class MetallicView: NSView, ScrollViewDelegate {
 
-	var scene: MetalicScene? {
+	var scene: MetallicScene? {
 		get { return self.sceneView.scene }
 		set {
 			self.sceneView.scene = newValue
@@ -65,8 +65,8 @@ class MetalicView: NSView, ScrollViewDelegate {
 		return scrollView
 	}()
 
-	private (set) lazy var sceneView: MetalicSceneView = {
-		let sceneView = MetalicSceneView(frame: CGRect.zero)
+	private (set) lazy var sceneView: MetallicSceneView = {
+		let sceneView = MetallicSceneView(frame: CGRect.zero)
 		sceneView.translatesAutoresizingMaskIntoConstraints = false
 		return sceneView
 	}()
@@ -91,13 +91,13 @@ class MetalicView: NSView, ScrollViewDelegate {
 		self.scrollView.maxMagnification = 4
 		self.scrollView.minMagnification = 0.5
 
-		NotificationCenter.default.addObserver(self, selector: #selector(displayScene), name: .DisplayMetalicScene, object: self)
+		NotificationCenter.default.addObserver(self, selector: #selector(displayScene), name: .displayMetallicScene, object: self)
 		self.enableSetNeedsDisplay = true
 		return {}
 	}()
 
 	@objc func displayScene(_ notification: NSNotification) {
-		if let sourceScene = notification.object as? MetalicScene, let destinationScene = self.scene, sourceScene == destinationScene {
+		if let sourceScene = notification.object as? MetallicScene, let destinationScene = self.scene, sourceScene == destinationScene {
 			self.sceneView.setNeedsDisplay()
 		}
 	}

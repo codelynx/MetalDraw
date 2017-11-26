@@ -711,7 +711,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="D7r-uz-kIZ" customClass="MetalicView" customModule="MetalDraw_mac" customModuleProvider="target">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="D7r-uz-kIZ" customClass="MetallicView" customModule="MetalDraw_mac" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                             </customView>
                         </subviews>
@@ -723,7 +723,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="metalicView" destination="D7r-uz-kIZ" id="d6c-Cp-sNU"/>
+                        <outlet property="metallicView" destination="D7r-uz-kIZ" id="d6c-Cp-sNU"/>
                     </connections>
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

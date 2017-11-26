@@ -1,5 +1,5 @@
 //
-//  MetalicEvent.swift
+//  MetallicEvent.swift
 //  MetalDraw_mac
 //
 //  Created by Kaz Yoshikawa on 11/23/17.
@@ -7,12 +7,12 @@
 
 import AppKit
 
-class MetalicEvent {
+class MetallicEvent {
 
 	let event: NSEvent
-	let sceneView: MetalicSceneView
+	let sceneView: MetallicSceneView
 	
-	init(event: NSEvent, sceneView: MetalicSceneView) {
+	init(event: NSEvent, sceneView: MetallicSceneView) {
 		self.event = event
 		self.sceneView = sceneView
 	}

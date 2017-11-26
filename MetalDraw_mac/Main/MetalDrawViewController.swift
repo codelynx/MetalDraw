@@ -9,7 +9,7 @@ import Cocoa
 
 class MetalDrawViewController: NSViewController {
 
-	@IBOutlet weak var metalicView: MetalicView!
+	@IBOutlet weak var metallicView: MetallicView!
 
 	lazy var sampleScene: SampleScene = {
 		return SampleScene(bounds: CGRect(x: 0, y: 0, width: 1024, height: 768))
@@ -17,7 +17,7 @@ class MetalDrawViewController: NSViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.metalicView.scene = self.sampleScene
+		self.metallicView.scene = self.sampleScene
 	}
 
 

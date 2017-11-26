@@ -9,24 +9,24 @@ import Cocoa
 import simd
 
 
-struct MetalicState {
+struct MetallicState {
 	var renderPassDescriptor: MTLRenderPassDescriptor
 	var transform: float4x4
 	var dictionary: [String: Any]
 }
 
 
-class MetalicContext {
+class MetallicContext {
 	private let commandQueue: MTLCommandQueue
-	private var stack = Stack<MetalicState>()
-	private var current: MetalicState
+	private var stack = Stack<MetallicState>()
+	private var current: MetallicState
 
-	init(commandQueue: MTLCommandQueue, state: MetalicState) {
+	init(commandQueue: MTLCommandQueue, state: MetallicState) {
 		self.commandQueue = commandQueue
 		self.current = state
 	}
 
-    func push(state: MetalicState) {
+    func push(state: MetallicState) {
 		self.stack.push(self.current)
 		self.current = state
 	}
@@ -58,7 +58,7 @@ class MetalicContext {
 		return commandQueue.device
 	}
 
-	func makeBuffer<T>(items: [T]) -> MetalicBuffer<T>? {
+	func makeBuffer<T>(items: [T]) -> MetallicBuffer<T>? {
 		return device.makeBuffer(elements: items)
 	}
 }

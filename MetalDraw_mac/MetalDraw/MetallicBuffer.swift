@@ -9,7 +9,7 @@
 import Foundation
 import MetalKit
 
-enum MetalicError: Error {
+enum MetallicError: Error {
 	case failedMakingBuffer
 }
 
@@ -18,7 +18,7 @@ enum MetalicError: Error {
 //	VertexBuffer
 //
 
-class MetalicBuffer<T> : MutableCollection {
+class MetallicBuffer<T> : MutableCollection {
 
     typealias Index = Int
 
@@ -62,7 +62,7 @@ class MetalicBuffer<T> : MutableCollection {
 		if let buffer = device.makeBuffer(bytes: vertices, length: length, options: [.storageModeShared]) {
 			self.buffer = buffer
 		}
-		else { throw MetalicError.failedMakingBuffer }
+		else { throw MetallicError.failedMakingBuffer }
 	}
 
 	deinit {
@@ -80,7 +80,7 @@ class MetalicBuffer<T> : MutableCollection {
 		else {
 			let count = self.count
 			let length = MemoryLayout<T>.stride * (count + vertices.count)
-			guard let buffer = self.device.makeBuffer(length: length, options: [.storageModeShared]) else { throw MetalicError.failedMakingBuffer }
+			guard let buffer = self.device.makeBuffer(length: length, options: [.storageModeShared]) else { throw MetallicError.failedMakingBuffer }
 
 			let sourceArray = UnsafeMutableBufferPointer<T>(buffer: self.buffer, count: count)
 
@@ -105,7 +105,7 @@ class MetalicBuffer<T> : MutableCollection {
 		}
 		else {
 			let bytes = MemoryLayout<T>.size * vertices.count
-			guard let buffer = device.makeBuffer(bytes: vertices, length: bytes, options: [.storageModeShared]) else { throw MetalicError.failedMakingBuffer }
+			guard let buffer = device.makeBuffer(bytes: vertices, length: bytes, options: [.storageModeShared]) else { throw MetallicError.failedMakingBuffer }
 			self.count = vertices.count
 			self.capacity = vertices.count
 			self.buffer = buffer

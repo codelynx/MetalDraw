@@ -1,5 +1,5 @@
 //
-//  MetalicDevice.swift
+//  MetallicDevice.swift
 //  MetalDraw_mac
 //
 //  Created by Kaz Yoshikawa on 11/21/17.
@@ -7,8 +7,8 @@
 
 import MetalKit
 
-struct MetalicDevice {
-    static let shared = MetalicDevice()
+struct MetallicDevice {
+    static let shared = MetallicDevice()
 	let device: MTLDevice
     let library: MTLLibrary
     let commandQueue: MTLCommandQueue
@@ -22,8 +22,8 @@ struct MetalicDevice {
         self.commandQueue = commandQueue
 	}
 
-	func makeBuffer<T>(items: [T], capacity: Int? = nil) throws -> MetalicBuffer<T> {
-		return try MetalicBuffer(device: device, vertices: items, capacity: capacity)
+	func makeBuffer<T>(items: [T], capacity: Int? = nil) throws -> MetallicBuffer<T> {
+		return try MetallicBuffer(device: device, vertices: items, capacity: capacity)
 	}
 
 }

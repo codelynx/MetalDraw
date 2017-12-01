@@ -15,4 +15,9 @@ extension MTLDevice {
 		return buffer
 	}
 
+
+	func makeBuffer<T>(items: [T], capacity: Int? = nil) throws -> MetallicBuffer<T> {
+		return try MetallicBuffer(device: self, vertices: items, capacity: capacity)
+	}
+
 }

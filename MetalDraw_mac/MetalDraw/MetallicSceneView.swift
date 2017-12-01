@@ -10,6 +10,8 @@ import MetalKit
 
 class MetallicSceneView: MTKView, MTKViewDelegate {
 
+	var metallic: Metallic!
+
 	var scene: MetallicScene? {
 		didSet {
 			setNeedsDisplay()
@@ -18,7 +20,8 @@ class MetallicSceneView: MTKView, MTKViewDelegate {
 
 	override func layout() {
 		super.layout()
-		self.device = MetallicDevice.shared.device
+		assert(metallic != nil)
+		self.device = metallic.device
 		self.wantsLayer = true
 		self.layer?.backgroundColor = NSColor.white.cgColor
 		self.layer?.borderWidth = 1.0
@@ -49,8 +52,8 @@ class MetallicSceneView: MTKView, MTKViewDelegate {
 
 	func draw(in view: MTKView) {
 		print("bounds: \(self.bounds)")
-        guard let drawable = self.currentDrawable else { return }
-        let commandQueue = MetallicDevice.shared.commandQueue
+        guard let drawable = self.currentDrawable else { print("currentDrawable nil: \(#function)"); return }
+        let commandQueue = metallic.commandQueue
 
         let renderPassDescriptor = MTLRenderPassDescriptor()
         renderPassDescriptor.colorAttachments[0].texture = drawable.texture // error on simulator target
@@ -68,7 +71,7 @@ class MetallicSceneView: MTKView, MTKViewDelegate {
         if let scene = self.scene, let t = self.renderingTransform {
             let t = float4x4(affineTransform: t)
             let state = MetallicState(renderPassDescriptor: renderPassDescriptor, transform: t, dictionary: [:])
-            let context = MetallicContext(commandQueue: commandQueue, state: state)
+            let context = MetallicContext(metallic: metallic, state: state)
             scene.render(context: context)
         }
 

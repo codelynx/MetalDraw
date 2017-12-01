@@ -53,6 +53,10 @@ class MetallicView: NSView, ScrollViewDelegate {
 		self.setup()
 	}
 
+	lazy var metalic: Metallic = {
+		return Metallic.shared
+	}()
+
 	private (set) lazy var clipView: NSClipView = {
 		let clipView = FlippedClipView(frame: self.bounds)
 		clipView.translatesAutoresizingMaskIntoConstraints = false
@@ -67,6 +71,7 @@ class MetallicView: NSView, ScrollViewDelegate {
 
 	private (set) lazy var sceneView: MetallicSceneView = {
 		let sceneView = MetallicSceneView(frame: CGRect.zero)
+		sceneView.metallic = self.metalic
 		sceneView.translatesAutoresizingMaskIntoConstraints = false
 		return sceneView
 	}()

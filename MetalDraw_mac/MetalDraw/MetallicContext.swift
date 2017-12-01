@@ -17,12 +17,13 @@ struct MetallicState {
 
 
 class MetallicContext {
-	private let commandQueue: MTLCommandQueue
+
+	public let metallic: Metallic
 	private var stack = Stack<MetallicState>()
 	private var current: MetallicState
 
-	init(commandQueue: MTLCommandQueue, state: MetallicState) {
-		self.commandQueue = commandQueue
+	init(metallic: Metallic, state: MetallicState) {
+		self.metallic = metallic
 		self.current = state
 	}
 
@@ -35,6 +36,10 @@ class MetallicContext {
 		if let state = self.stack.pop() {
 			self.current = state
 		}
+	}
+
+	var commandQueue: MTLCommandQueue {
+		return metallic.commandQueue
 	}
 
 	func makeCommandBuffer() -> MTLCommandBuffer? {
@@ -60,6 +65,10 @@ class MetallicContext {
 
 	func makeBuffer<T>(items: [T]) -> MetallicBuffer<T>? {
 		return device.makeBuffer(elements: items)
+	}
+	
+	func renderer<T: MetallicRenderer>() -> T {
+		return metallic.renderer()
 	}
 }
 

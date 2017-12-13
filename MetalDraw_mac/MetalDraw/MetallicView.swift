@@ -53,9 +53,7 @@ class MetallicView: NSView, ScrollViewDelegate {
 		self.setup()
 	}
 
-	lazy var metalic: Metallic = {
-		return Metallic.shared
-	}()
+	lazy var metalic: Metallic? = { return Metallic.shared }()
 
 	private (set) lazy var clipView: NSClipView = {
 		let clipView = FlippedClipView(frame: self.bounds)

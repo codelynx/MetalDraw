@@ -1,5 +1,5 @@
 //
-//	ColorShader.metal
+//	ColorShaders.metal
 //	Silvershadow
 //
 //	Created by Kaz Yoshikawa on 12/22/15.

@@ -248,6 +248,10 @@ struct Point: Hashable, CustomStringConvertible {
 	var description: String {
 		return "(x:\(x), y:\(y))"
 	}
+	
+	static let zero = Point(x: 0, y: 0)
+	static let nan = Point(x: Float.nan, y: Float.nan)
+
 }
 
 

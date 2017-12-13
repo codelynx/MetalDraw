@@ -12,7 +12,15 @@ import simd
 struct MetallicState {
 	var renderPassDescriptor: MTLRenderPassDescriptor
 	var transform: float4x4
+	var pixelFormat: MTLPixelFormat
 	var dictionary: [String: Any]
+	
+	init(renderPassDescriptor: MTLRenderPassDescriptor, transform: float4x4, pixelFormat: MTLPixelFormat = .bgra8Unorm, dictionary: [String: Any] = [:]) {
+		self.renderPassDescriptor = renderPassDescriptor
+		self.transform = transform
+		self.pixelFormat = pixelFormat
+		self.dictionary = dictionary
+	}
 }
 
 
@@ -21,6 +29,7 @@ class MetallicContext {
 	public let metallic: Metallic
 	private var stack = Stack<MetallicState>()
 	private var current: MetallicState
+	var dictionary = [String: Any]()
 
 	init(metallic: Metallic, state: MetallicState) {
 		self.metallic = metallic

@@ -61,12 +61,13 @@ class MetallicSceneView: MTKView, MTKViewDelegate {
         renderPassDescriptor.colorAttachments[0].loadAction = .clear
         renderPassDescriptor.colorAttachments[0].storeAction = .store
 
-
         if let commandBuffer = commandQueue.makeCommandBuffer(),
             let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) {
             commandEncoder.endEncoding()
             commandBuffer.commit()
         }
+
+        renderPassDescriptor.colorAttachments[0].loadAction = .load
 
         if let scene = self.scene, let t = self.renderingTransform {
             let t = float4x4(affineTransform: t)

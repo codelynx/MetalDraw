@@ -10,6 +10,8 @@ import simd
 
 class ColorRenderer: MetallicRenderer {
 
+	let metallic: Metallic
+
 	struct Vertex {
 		var x, y, z, w, r, g, b, a: Float
 	}
@@ -17,8 +19,6 @@ class ColorRenderer: MetallicRenderer {
 	struct Uniforms {
 		var transform: float4x4
 	}
-
-	let metallic: Metallic
 
 	required init(metallic: Metallic) {
 		self.metallic = metallic
@@ -64,18 +64,16 @@ class ColorRenderer: MetallicRenderer {
 		var uniforms = Uniforms(transform: context.transform)
 		let uniformsBuffer = device.makeBuffer(bytes: &uniforms, length: MemoryLayout<Uniforms>.size, options: [])
 
-		if let commandBuffer = commandQueue?.makeCommandBuffer(),
-		   let encoder = commandBuffer.makeRenderCommandEncoder(descriptor: context.renderPassDescriptor),
-		   let renderPipelineState = renderPipelineState {
-			encoder.setRenderPipelineState(renderPipelineState)
-			encoder.setVertexBuffer(vertexBuffer.buffer, offset: 0, index: 0)
-			encoder.setVertexBuffer(uniformsBuffer, offset: 0, index: 1)
-			encoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertexBuffer.count)
+		guard let commandBuffer = commandQueue.makeCommandBuffer() else { fatalError() }
+		guard let encoder = commandBuffer.makeRenderCommandEncoder(descriptor: context.renderPassDescriptor) else { fatalError() }
+		guard let renderPipelineState = renderPipelineState else { fatalError() }
+		encoder.setRenderPipelineState(renderPipelineState)
+		encoder.setVertexBuffer(vertexBuffer.buffer, offset: 0, index: 0)
+		encoder.setVertexBuffer(uniformsBuffer, offset: 0, index: 1)
+		encoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: vertexBuffer.count)
 
-			encoder.endEncoding()
-			commandBuffer.commit()
-		}
-		else { print("warning: \(#file):\(#line) - \(#function)") }
+		encoder.endEncoding()
+		commandBuffer.commit()
 	}
 
 }
@@ -83,7 +81,6 @@ class ColorRenderer: MetallicRenderer {
 extension MetallicContext {
 
 	func renderColor(verticies: [ColorRenderer.Vertex]) {
-		
 		if let buffer = self.makeBuffer(items: verticies) {
 			let renderer = metallic.renderer() as ColorRenderer
 			renderer.render(context: self, vertexBuffer: buffer)

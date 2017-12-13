@@ -13,17 +13,22 @@ struct Metallic {
 	let commandQueue: MTLCommandQueue
 	let library: MTLLibrary?
 
-	
 	private (set) static var shared = Metallic()
 
-	private init() {
-		guard let device = MTLCreateSystemDefaultDevice() else { fatalError("failed to create device: MTLCreateSystemDefaultDevice()") }
-		guard let commandQueue = device.makeCommandQueue() else { fatalError("failed to make command queue: makeCommandQueue()") }
+	init?() {
+		guard let device = MTLCreateSystemDefaultDevice()
+			else { print("failed: MTLCreateSystemDefaultDevice()"); return nil }
+		guard let commandQueue = device.makeCommandQueue()
+			else { print("failed: makeCommandQueue()"); return nil }
 		self.device = device
 		self.commandQueue = commandQueue
 		self.library = device.makeDefaultLibrary()
 	}
-	
+
+	//
+
+	var pixelFormat: MTLPixelFormat { return .bgra8Unorm }
+
 	// MARK: -
 
 	private (set) var renderers = NSMapTable<NSString, AnyObject>.strongToWeakObjects()

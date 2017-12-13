@@ -10,6 +10,9 @@
 		372ED8481FC74E0E005EDD6A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372ED8471FC74E0E005EDD6A /* Extensions.swift */; };
 		372ED84A1FC74F22005EDD6A /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372ED8491FC74F21005EDD6A /* ScrollView.swift */; };
 		CC0700BE1FC7317A00BFB914 /* MetallicEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0700BD1FC7317A00BFB914 /* MetallicEvent.swift */; };
+		CCA3A21D1FDB0B21009BF692 /* CGPath+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA3A21C1FDB0B21009BF692 /* CGPath+Z.swift */; };
+		CCA3A2211FDB1B68009BF692 /* Float16.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA3A2201FDB1B68009BF692 /* Float16.swift */; };
+		CCA3A2231FDC3D1A009BF692 /* NSBezierPath+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA3A2221FDC3D1A009BF692 /* NSBezierPath+Z.swift */; };
 		CCA5E3621FC389C300AC275F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3611FC389C300AC275F /* AppDelegate.swift */; };
 		CCA5E3641FC389C300AC275F /* MetalDrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3631FC389C300AC275F /* MetalDrawViewController.swift */; };
 		CCA5E3661FC389C300AC275F /* MetalDrawDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3651FC389C300AC275F /* MetalDrawDocument.swift */; };
@@ -19,7 +22,7 @@
 		CCA5E3781FC3907000AC275F /* MetallicSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3771FC3907000AC275F /* MetallicSceneView.swift */; };
 		CCA5E37D1FC393A500AC275F /* FlippedClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E37C1FC393A500AC275F /* FlippedClipView.swift */; };
 		CCA5E37F1FC3A4D600AC275F /* CoreGraphics+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E37E1FC3A4D600AC275F /* CoreGraphics+Z.swift */; };
-		CCA5E3821FC3D1AC00AC275F /* ColorShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3811FC3D1AC00AC275F /* ColorShader.metal */; };
+		CCA5E3821FC3D1AC00AC275F /* ColorShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3811FC3D1AC00AC275F /* ColorShaders.metal */; };
 		CCA5E3841FC3D20300AC275F /* ColorRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3831FC3D20300AC275F /* ColorRenderer.swift */; };
 		CCA5E3881FC3D75E00AC275F /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3871FC3D75E00AC275F /* Stack.swift */; };
 		CCA5E38A1FC3F94D00AC275F /* MetallicContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3891FC3F94D00AC275F /* MetallicContext.swift */; };
@@ -30,12 +33,22 @@
 		CCA5E3941FC41AA800AC275F /* MetallicRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3931FC41AA800AC275F /* MetallicRenderer.swift */; };
 		CCA5E3961FC473D400AC275F /* MetallicBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3951FC473D400AC275F /* MetallicBuffer.swift */; };
 		CCC53DFE1FC5375F00B56678 /* MTLDevice+Metallic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53DFD1FC5375F00B56678 /* MTLDevice+Metallic.swift */; };
+		CCE32D651FE0EED9005EE375 /* PointShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = CCE32D641FE0EED9005EE375 /* PointShader.metal */; };
+		CCE32D671FE0EF4E005EE375 /* PointRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE32D661FE0EF4E005EE375 /* PointRenderer.swift */; };
+		CCE32D6D1FE1877D005EE375 /* BezierRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE32D6B1FE1877D005EE375 /* BezierRenderer.swift */; };
+		CCE32D6E1FE1877D005EE375 /* BezierShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = CCE32D6C1FE1877D005EE375 /* BezierShaders.metal */; };
+		CCE32D701FE18856005EE375 /* NSImage+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE32D6F1FE18856005EE375 /* NSImage+Z.swift */; };
+		CCE32D721FE18A30005EE375 /* MTLDevice+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE32D711FE18A30005EE375 /* MTLDevice+Z.swift */; };
+		CCE32D741FE190A5005EE375 /* XPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE32D731FE190A5005EE375 /* XPlatform.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		372ED8471FC74E0E005EDD6A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		372ED8491FC74F21005EDD6A /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		CC0700BD1FC7317A00BFB914 /* MetallicEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicEvent.swift; sourceTree = "<group>"; };
+		CCA3A21C1FDB0B21009BF692 /* CGPath+Z.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPath+Z.swift"; sourceTree = "<group>"; };
+		CCA3A2201FDB1B68009BF692 /* Float16.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Float16.swift; sourceTree = "<group>"; };
+		CCA3A2221FDC3D1A009BF692 /* NSBezierPath+Z.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+Z.swift"; sourceTree = "<group>"; };
 		CCA5E35E1FC389C300AC275F /* MetalDraw_mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalDraw_mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA5E3611FC389C300AC275F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCA5E3631FC389C300AC275F /* MetalDrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalDrawViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +61,7 @@
 		CCA5E3771FC3907000AC275F /* MetallicSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicSceneView.swift; sourceTree = "<group>"; };
 		CCA5E37C1FC393A500AC275F /* FlippedClipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlippedClipView.swift; sourceTree = "<group>"; };
 		CCA5E37E1FC3A4D600AC275F /* CoreGraphics+Z.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreGraphics+Z.swift"; sourceTree = "<group>"; };
-		CCA5E3811FC3D1AC00AC275F /* ColorShader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ColorShader.metal; sourceTree = "<group>"; };
+		CCA5E3811FC3D1AC00AC275F /* ColorShaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ColorShaders.metal; sourceTree = "<group>"; };
 		CCA5E3831FC3D20300AC275F /* ColorRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorRenderer.swift; sourceTree = "<group>"; };
 		CCA5E3871FC3D75E00AC275F /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		CCA5E3891FC3F94D00AC275F /* MetallicContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetallicContext.swift; sourceTree = "<group>"; };
@@ -59,6 +72,13 @@
 		CCA5E3931FC41AA800AC275F /* MetallicRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicRenderer.swift; sourceTree = "<group>"; };
 		CCA5E3951FC473D400AC275F /* MetallicBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetallicBuffer.swift; sourceTree = "<group>"; };
 		CCC53DFD1FC5375F00B56678 /* MTLDevice+Metallic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTLDevice+Metallic.swift"; sourceTree = "<group>"; };
+		CCE32D641FE0EED9005EE375 /* PointShader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PointShader.metal; sourceTree = "<group>"; };
+		CCE32D661FE0EF4E005EE375 /* PointRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointRenderer.swift; sourceTree = "<group>"; };
+		CCE32D6B1FE1877D005EE375 /* BezierRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierRenderer.swift; sourceTree = "<group>"; };
+		CCE32D6C1FE1877D005EE375 /* BezierShaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = BezierShaders.metal; sourceTree = "<group>"; };
+		CCE32D6F1FE18856005EE375 /* NSImage+Z.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Z.swift"; sourceTree = "<group>"; };
+		CCE32D711FE18A30005EE375 /* MTLDevice+Z.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MTLDevice+Z.swift"; sourceTree = "<group>"; };
+		CCE32D731FE190A5005EE375 /* XPlatform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XPlatform.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +111,7 @@
 		CCA5E3601FC389C300AC275F /* MetalDraw_mac */ = {
 			isa = PBXGroup;
 			children = (
+				CCDF463E1FE1A5D900AD0241 /* Resources */,
 				CCA5E3801FC3D18F00AC275F /* Shaders */,
 				CCA5E37B1FC3938500AC275F /* Utilities */,
 				CCA5E3721FC38E0800AC275F /* MetalDraw */,
@@ -134,11 +155,17 @@
 		CCA5E37B1FC3938500AC275F /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				372ED8491FC74F21005EDD6A /* ScrollView.swift */,
-				372ED8471FC74E0E005EDD6A /* Extensions.swift */,
+				CCA3A21C1FDB0B21009BF692 /* CGPath+Z.swift */,
 				CCA5E37E1FC3A4D600AC275F /* CoreGraphics+Z.swift */,
+				372ED8471FC74E0E005EDD6A /* Extensions.swift */,
 				CCA5E37C1FC393A500AC275F /* FlippedClipView.swift */,
+				CCA3A2201FDB1B68009BF692 /* Float16.swift */,
+				CCE32D711FE18A30005EE375 /* MTLDevice+Z.swift */,
+				CCA3A2221FDC3D1A009BF692 /* NSBezierPath+Z.swift */,
+				CCE32D6F1FE18856005EE375 /* NSImage+Z.swift */,
+				372ED8491FC74F21005EDD6A /* ScrollView.swift */,
 				CCA5E3871FC3D75E00AC275F /* Stack.swift */,
+				CCE32D731FE190A5005EE375 /* XPlatform.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -146,10 +173,29 @@
 		CCA5E3801FC3D18F00AC275F /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
-				CCA5E3811FC3D1AC00AC275F /* ColorShader.metal */,
+				CCE32D6B1FE1877D005EE375 /* BezierRenderer.swift */,
+				CCE32D6C1FE1877D005EE375 /* BezierShaders.metal */,
 				CCA5E3831FC3D20300AC275F /* ColorRenderer.swift */,
+				CCA5E3811FC3D1AC00AC275F /* ColorShaders.metal */,
+				CCE32D661FE0EF4E005EE375 /* PointRenderer.swift */,
+				CCE32D641FE0EED9005EE375 /* PointShader.metal */,
 			);
 			path = Shaders;
+			sourceTree = "<group>";
+		};
+		CCDF463E1FE1A5D900AD0241 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CCDF463F1FE1A5D900AD0241 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CCDF463F1FE1A5D900AD0241 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,10 +269,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				372ED84A1FC74F22005EDD6A /* ScrollView.swift in Sources */,
+				CCE32D721FE18A30005EE375 /* MTLDevice+Z.swift in Sources */,
+				CCE32D6E1FE1877D005EE375 /* BezierShaders.metal in Sources */,
 				372ED8481FC74E0E005EDD6A /* Extensions.swift in Sources */,
+				CCA3A2211FDB1B68009BF692 /* Float16.swift in Sources */,
 				CCA5E3901FC400E100AC275F /* SampleScene.swift in Sources */,
 				CCA5E3841FC3D20300AC275F /* ColorRenderer.swift in Sources */,
+				CCE32D651FE0EED9005EE375 /* PointShader.metal in Sources */,
 				CCA5E3961FC473D400AC275F /* MetallicBuffer.swift in Sources */,
+				CCA3A21D1FDB0B21009BF692 /* CGPath+Z.swift in Sources */,
 				CCA5E3921FC4176A00AC275F /* Metallic.swift in Sources */,
 				CCA5E3641FC389C300AC275F /* MetalDrawViewController.swift in Sources */,
 				CCA5E3621FC389C300AC275F /* AppDelegate.swift in Sources */,
@@ -234,15 +285,20 @@
 				CCA5E3941FC41AA800AC275F /* MetallicRenderer.swift in Sources */,
 				CCA5E38C1FC3F98100AC275F /* MetallicScene.swift in Sources */,
 				CCA5E3781FC3907000AC275F /* MetallicSceneView.swift in Sources */,
+				CCA3A2231FDC3D1A009BF692 /* NSBezierPath+Z.swift in Sources */,
 				CCA5E3741FC38E5200AC275F /* MetallicView.swift in Sources */,
+				CCE32D671FE0EF4E005EE375 /* PointRenderer.swift in Sources */,
 				CCC53DFE1FC5375F00B56678 /* MTLDevice+Metallic.swift in Sources */,
 				CCA5E38A1FC3F94D00AC275F /* MetallicContext.swift in Sources */,
 				CCA5E3661FC389C300AC275F /* MetalDrawDocument.swift in Sources */,
-				CCA5E3821FC3D1AC00AC275F /* ColorShader.metal in Sources */,
+				CCA5E3821FC3D1AC00AC275F /* ColorShaders.metal in Sources */,
 				CCA5E37F1FC3A4D600AC275F /* CoreGraphics+Z.swift in Sources */,
 				CC0700BE1FC7317A00BFB914 /* MetallicEvent.swift in Sources */,
 				CCA5E37D1FC393A500AC275F /* FlippedClipView.swift in Sources */,
 				CCA5E38E1FC3F9DA00AC275F /* MetallicNode.swift in Sources */,
+				CCE32D741FE190A5005EE375 /* XPlatform.swift in Sources */,
+				CCE32D6D1FE1877D005EE375 /* BezierRenderer.swift in Sources */,
+				CCE32D701FE18856005EE375 /* NSImage+Z.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

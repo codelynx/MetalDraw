@@ -7,7 +7,9 @@
 //
 
 import Foundation
+import AppKit
 import MetalKit
+import Cocoa
 
 extension MTLDevice {
 
@@ -15,21 +17,16 @@ extension MTLDevice {
 		return MTKTextureLoader(device: self)
 	}
 
-/*
-	func makeTexture(image: CGImage) -> MTLTexture? {
-//		let options = [MTKTextureLoader.Option : Any]()
-		var options: [MTKTextureLoader.Option : Any] = [
-			MTKTextureLoader.Option.SRGB: false as NSNumber
-		]
-
-		do { return try self.textureLoader.newTexture(cgImage: image, options: options) }
-		catch { fatalError("\(error)") }
-	}
-*/
-
 	func makeTexture(named name: String) -> MTLTexture? {
-		do { return try self.textureLoader.newTexture(name: "Particle", scaleFactor: 1, bundle: nil, options: nil) }
-		catch { fatalError("\(error)") }
+		let filepath = Bundle.main.path(forResource: "test5", ofType: "png")!
+		let data = try! Data(contentsOf: URL(fileURLWithPath: filepath))
+		do {
+			let texture = try self.textureLoader.newTexture(data: data, options: nil)
+			print("pixelFormat=\(texture.pixelFormat.rawValue)")
+			return texture
+		}
+		catch { print("\(error)"); fatalError("\(error)") }
+		return nil
 	}
 
 	#if os(iOS)

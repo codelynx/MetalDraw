@@ -14,4 +14,11 @@ extension NSImage {
 		self.init(named: NSImage.Name(name))
 	}
 
+	var pngRepresentation: Data? {
+		if let cgImage = self.cgImage {
+			let imageRep = NSBitmapImageRep(cgImage: cgImage)
+			return imageRep.representation(using: .png, properties: [:])
+		}
+		return nil
+	}
 }

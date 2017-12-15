@@ -30,14 +30,15 @@ class PointRenderer: MetallicRenderer {
 			self.y = y
 			self.width = width
 			self.unused = 0
-			self.color = float4(r, b, g, a)
+			self.color = float4(r, g, b, a)
 		}
-		init(x: CGFloat, y: CGFloat, width: CGFloat, rgba: (r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat)) {
+		init(x: CGFloat, y: CGFloat, width: CGFloat, color: XColor) {
 			self.x = Float(x)
 			self.y = Float(y)
 			self.width = Float(width)
 			self.unused = 0
-			self.color = float4(Float(rgba.r), Float(rgba.b), Float(rgba.g), Float(rgba.a))
+			let rgba = color.rgba
+			self.color = float4(Float(rgba.r), Float(rgba.g), Float(rgba.b), Float(rgba.a))
 		}
 	}
 

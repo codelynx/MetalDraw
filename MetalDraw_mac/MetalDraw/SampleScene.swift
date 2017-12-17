@@ -34,6 +34,11 @@ class SampleScene: MetallicScene {
 //	let pt3 = ColorRenderer.Vertex(x: +1, y: 1, z: 0, w: 1, r: 0, g: 0, b: 1, a: 0.5)
 
 	override func render(context: MetallicContext) {
+
+		let image = NSImage(named: "dandelion.png")!
+//		context.render(image: image, in: Rect(-1, -1, 2, 2))
+		context.render(image: image, in: Rect(0, 0, 1024, 1024))
+
 		context.renderColor(verticies: [pt1, pt2, pt3])
 		context.renderPoints(points: self.pointVertices)
 

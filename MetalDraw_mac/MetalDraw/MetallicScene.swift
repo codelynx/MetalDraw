@@ -11,6 +11,12 @@ import MetalKit
 
 class MetallicScene: MetallicNode, Equatable {
 
+	fileprivate (set) var metallic: Metallic? {
+		didSet {
+			self.metallicDidSet()
+		}
+	}
+
 	var bounds: CGRect
 	var subnodes = [MetallicNode]()
 
@@ -27,6 +33,9 @@ class MetallicScene: MetallicNode, Equatable {
 
 	func setNeedsDisplay() {
 		NotificationCenter.default.post(name: .displayMetallicScene, object: self)
+	}
+	
+	func metallicDidSet() {
 	}
 
 	static func == (lhs: MetallicScene, rhs: MetallicScene) -> Bool {
@@ -53,3 +62,12 @@ class MetallicScene: MetallicNode, Equatable {
     }
 
 }
+
+extension MetallicSceneView {
+
+	func sceneDidSet() {
+		self.scene?.metallic = self.metallic
+	}
+
+}
+

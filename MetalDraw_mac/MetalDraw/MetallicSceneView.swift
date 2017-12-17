@@ -14,7 +14,8 @@ class MetallicSceneView: MTKView, MTKViewDelegate {
 
 	var scene: MetallicScene? {
 		didSet {
-			setNeedsDisplay()
+			self.sceneDidSet()
+			self.setNeedsDisplay()
 		}
 	}
 

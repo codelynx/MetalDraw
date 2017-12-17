@@ -60,5 +60,33 @@ struct Metallic {
 			return renderer
 		}
 	}
+	
+	// MARK: -
+
+	func makeTexture(ciImage: CIImage) -> MTLTexture? {
+		//let ciImage = ciImage.transformed(by: CGAffineTransform(scaleX: 1, y: -1).translatedBy(x: 0, y: ciImage.extent.height))
+		let context = CIContext(mtlDevice: self.device)
+		let colorSpace = CGColorSpaceCreateDeviceRGB()
+		let (width, height) = (Int(ciImage.extent.width), Int(ciImage.extent.height))
+		let descriptor = MTLTextureDescriptor.texture2DDescriptor(pixelFormat: self.pixelFormat, width: width, height: height, mipmapped: false)
+//		descriptor.resourceOptions = [.storageModeManaged, .storageModeShared]
+		descriptor.storageMode = .managed
+		descriptor.usage = [.shaderRead, .shaderWrite]
+		guard let texture = self.device.makeTexture(descriptor: descriptor) else { return nil }
+		context.render(ciImage, to: texture, commandBuffer: nil, bounds: ciImage.extent, colorSpace: colorSpace)
+		return texture
+	}
+
+	func makeTexture(cgImage: CGImage) -> MTLTexture? {
+		let ciImage = CIImage(cgImage: cgImage)
+		return self.makeTexture(ciImage: ciImage)
+	}
+
+	func makeTexture(named name: String) -> MTLTexture? {
+		guard let image = XImage(named: name) else { return nil }
+		guard let data = image.tiffRepresentation else { return nil }
+		guard let ciImage = CIImage(data: data) else { return nil }
+		return makeTexture(ciImage: ciImage)
+	}
 
 }

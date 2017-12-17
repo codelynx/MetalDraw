@@ -34,6 +34,11 @@
 		CCA5E3961FC473D400AC275F /* MetallicBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3951FC473D400AC275F /* MetallicBuffer.swift */; };
 		CCA778811FE38A8100C24D13 /* test5.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA778801FE38A8100C24D13 /* test5.png */; };
 		CCA778871FE441C000C24D13 /* test6.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA778861FE441BF00C24D13 /* test6.png */; };
+		CCA778891FE4889300C24D13 /* MetallicCanvasScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA778881FE4889300C24D13 /* MetallicCanvasScene.swift */; };
+		CCA7788D1FE5B66400C24D13 /* MetallicCanvasLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA7788C1FE5B66300C24D13 /* MetallicCanvasLayer.swift */; };
+		CCA778901FE5D18B00C24D13 /* ImageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA7788E1FE5D18B00C24D13 /* ImageRenderer.swift */; };
+		CCA778911FE5D18B00C24D13 /* ImageShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = CCA7788F1FE5D18B00C24D13 /* ImageShaders.metal */; };
+		CCB4CCBB1FE642290075EA9F /* dandelion.png in Resources */ = {isa = PBXBuildFile; fileRef = CCB4CCBA1FE642290075EA9F /* dandelion.png */; };
 		CCC53DFE1FC5375F00B56678 /* MTLDevice+Metallic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53DFD1FC5375F00B56678 /* MTLDevice+Metallic.swift */; };
 		CCE32D651FE0EED9005EE375 /* PointShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = CCE32D641FE0EED9005EE375 /* PointShader.metal */; };
 		CCE32D671FE0EF4E005EE375 /* PointRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE32D661FE0EF4E005EE375 /* PointRenderer.swift */; };
@@ -75,6 +80,11 @@
 		CCA5E3951FC473D400AC275F /* MetallicBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetallicBuffer.swift; sourceTree = "<group>"; };
 		CCA778801FE38A8100C24D13 /* test5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test5.png; sourceTree = "<group>"; };
 		CCA778861FE441BF00C24D13 /* test6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test6.png; sourceTree = "<group>"; };
+		CCA778881FE4889300C24D13 /* MetallicCanvasScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicCanvasScene.swift; sourceTree = "<group>"; };
+		CCA7788C1FE5B66300C24D13 /* MetallicCanvasLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetallicCanvasLayer.swift; sourceTree = "<group>"; };
+		CCA7788E1FE5D18B00C24D13 /* ImageRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRenderer.swift; sourceTree = "<group>"; };
+		CCA7788F1FE5D18B00C24D13 /* ImageShaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ImageShaders.metal; sourceTree = "<group>"; };
+		CCB4CCBA1FE642290075EA9F /* dandelion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dandelion.png; sourceTree = "<group>"; };
 		CCC53DFD1FC5375F00B56678 /* MTLDevice+Metallic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTLDevice+Metallic.swift"; sourceTree = "<group>"; };
 		CCE32D641FE0EED9005EE375 /* PointShader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PointShader.metal; sourceTree = "<group>"; };
 		CCE32D661FE0EF4E005EE375 /* PointRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointRenderer.swift; sourceTree = "<group>"; };
@@ -141,17 +151,19 @@
 		CCA5E3721FC38E0800AC275F /* MetalDraw */ = {
 			isa = PBXGroup;
 			children = (
-				CCA5E3951FC473D400AC275F /* MetallicBuffer.swift */,
-				CCA5E3891FC3F94D00AC275F /* MetallicContext.swift */,
 				CCA5E3911FC4176A00AC275F /* Metallic.swift */,
+				CCA5E3951FC473D400AC275F /* MetallicBuffer.swift */,
+				CCA778881FE4889300C24D13 /* MetallicCanvasScene.swift */,
+				CCA7788C1FE5B66300C24D13 /* MetallicCanvasLayer.swift */,
+				CCA5E3891FC3F94D00AC275F /* MetallicContext.swift */,
+				CC0700BD1FC7317A00BFB914 /* MetallicEvent.swift */,
 				CCA5E38D1FC3F9DA00AC275F /* MetallicNode.swift */,
 				CCA5E3931FC41AA800AC275F /* MetallicRenderer.swift */,
 				CCA5E38B1FC3F98100AC275F /* MetallicScene.swift */,
 				CCA5E3771FC3907000AC275F /* MetallicSceneView.swift */,
 				CCA5E3731FC38E5200AC275F /* MetallicView.swift */,
-				CCA5E38F1FC400E100AC275F /* SampleScene.swift */,
 				CCC53DFD1FC5375F00B56678 /* MTLDevice+Metallic.swift */,
-				CC0700BD1FC7317A00BFB914 /* MetallicEvent.swift */,
+				CCA5E38F1FC400E100AC275F /* SampleScene.swift */,
 			);
 			path = MetalDraw;
 			sourceTree = "<group>";
@@ -181,6 +193,8 @@
 				CCE32D6C1FE1877D005EE375 /* BezierShaders.metal */,
 				CCA5E3831FC3D20300AC275F /* ColorRenderer.swift */,
 				CCA5E3811FC3D1AC00AC275F /* ColorShaders.metal */,
+				CCA7788E1FE5D18B00C24D13 /* ImageRenderer.swift */,
+				CCA7788F1FE5D18B00C24D13 /* ImageShaders.metal */,
 				CCE32D661FE0EF4E005EE375 /* PointRenderer.swift */,
 				CCE32D641FE0EED9005EE375 /* PointShader.metal */,
 			);
@@ -200,6 +214,7 @@
 			children = (
 				CCA778801FE38A8100C24D13 /* test5.png */,
 				CCA778861FE441BF00C24D13 /* test6.png */,
+				CCB4CCBA1FE642290075EA9F /* dandelion.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -263,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCA5E3681FC389C300AC275F /* Assets.xcassets in Resources */,
+				CCB4CCBB1FE642290075EA9F /* dandelion.png in Resources */,
 				CCA5E36B1FC389C300AC275F /* Main.storyboard in Resources */,
 				CCA778871FE441C000C24D13 /* test6.png in Resources */,
 				CCA778811FE38A8100C24D13 /* test5.png in Resources */,
@@ -282,6 +298,7 @@
 				372ED8481FC74E0E005EDD6A /* Extensions.swift in Sources */,
 				CCA3A2211FDB1B68009BF692 /* Float16.swift in Sources */,
 				CCA5E3901FC400E100AC275F /* SampleScene.swift in Sources */,
+				CCA7788D1FE5B66400C24D13 /* MetallicCanvasLayer.swift in Sources */,
 				CCA5E3841FC3D20300AC275F /* ColorRenderer.swift in Sources */,
 				CCE32D651FE0EED9005EE375 /* PointShader.metal in Sources */,
 				CCA5E3961FC473D400AC275F /* MetallicBuffer.swift in Sources */,
@@ -298,10 +315,13 @@
 				CCE32D671FE0EF4E005EE375 /* PointRenderer.swift in Sources */,
 				CCC53DFE1FC5375F00B56678 /* MTLDevice+Metallic.swift in Sources */,
 				CCA5E38A1FC3F94D00AC275F /* MetallicContext.swift in Sources */,
+				CCA778891FE4889300C24D13 /* MetallicCanvasScene.swift in Sources */,
+				CCA778901FE5D18B00C24D13 /* ImageRenderer.swift in Sources */,
 				CCA5E3661FC389C300AC275F /* MetalDrawDocument.swift in Sources */,
 				CCA5E3821FC3D1AC00AC275F /* ColorShaders.metal in Sources */,
 				CCA5E37F1FC3A4D600AC275F /* CoreGraphics+Z.swift in Sources */,
 				CC0700BE1FC7317A00BFB914 /* MetallicEvent.swift in Sources */,
+				CCA778911FE5D18B00C24D13 /* ImageShaders.metal in Sources */,
 				CCA5E37D1FC393A500AC275F /* FlippedClipView.swift in Sources */,
 				CCA5E38E1FC3F9DA00AC275F /* MetallicNode.swift in Sources */,
 				CCE32D741FE190A5005EE375 /* XPlatform.swift in Sources */,

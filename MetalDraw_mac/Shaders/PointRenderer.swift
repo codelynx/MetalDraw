@@ -48,13 +48,6 @@ class PointRenderer: MetallicRenderer {
 
 	var vertexDescriptor: MTLVertexDescriptor {
 		let vertexDescriptor = MTLVertexDescriptor()
-//		vertexDescriptor.attributes[0].offset = 0
-//		vertexDescriptor.attributes[0].format = .float2
-//		vertexDescriptor.attributes[0].bufferIndex = 0
-//		vertexDescriptor.attributes[1].offset = MemoryLayout<float4>.size
-//		vertexDescriptor.attributes[1].format = .float4
-//		vertexDescriptor.attributes[1].bufferIndex = 0
-
 		vertexDescriptor.layouts[0].stepFunction = .perVertex
 		vertexDescriptor.layouts[0].stride = MemoryLayout<Vertex>.size
 		return vertexDescriptor

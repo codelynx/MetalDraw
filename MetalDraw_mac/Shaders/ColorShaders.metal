@@ -11,8 +11,8 @@ using namespace metal;
 
 
 struct VertexIn {
-	float4 position [[ attribute(0) ]];
-	float4 color [[ attribute(1) ]];
+	float4 position;
+	float4 color;
 };
 
 struct VertexOut {

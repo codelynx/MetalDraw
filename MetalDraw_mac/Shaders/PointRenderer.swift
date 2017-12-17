@@ -44,6 +44,17 @@ class PointRenderer: MetallicRenderer {
 
 	struct Uniforms {
 		var transform: float4x4
+		var scale: Float
+		var unused1: Float
+		var unused2: Float
+		var unused3: Float
+		init(transform: float4x4, scale: Float) {
+			self.transform = transform
+			self.scale = scale
+			self.unused1 = 0
+			self.unused2 = 0
+			self.unused3 = 0
+		}
 	}
 
 	var vertexDescriptor: MTLVertexDescriptor {
@@ -75,7 +86,7 @@ class PointRenderer: MetallicRenderer {
 	}()
 
 	func render(context: MetallicContext, vertexBuffer: MetallicBuffer<Vertex>) {
-		let uniforms = Uniforms(transform: context.transform)
+		let uniforms = Uniforms(transform: context.transform, scale: context.scale)
 		let uniformsBuffer = context.makeBuffer(items: [uniforms])!
 
 		let commandBuffer = commandQueue.makeCommandBuffer()!

@@ -58,8 +58,8 @@ class MettalicCanvasScene: MetallicScene {
 				commandEncoder.endEncoding()
 				commandBuffer.commit()
 			}
-
-            let state = MetallicState(renderPassDescriptor: renderPassDescriptor, transform: context.transform, dictionary: [:])
+			let scale = Float(1)
+            let state = MetallicState(renderPassDescriptor: renderPassDescriptor, transform: context.transform, scale: scale, dictionary: [:])
             let context = MetallicContext(metallic: context.metallic, state: state)
 			layer.render(context: context)
 			

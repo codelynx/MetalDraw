@@ -92,7 +92,6 @@ class ImageRenderer: MetallicRenderer {
 		renderPipelineDescriptor.colorAttachments[0].destinationRGBBlendFactor = .oneMinusSourceAlpha
 		renderPipelineDescriptor.colorAttachments[0].destinationAlphaBlendFactor = .oneMinusSourceAlpha
 
-
 		return try! self.device.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
 	}()
 
@@ -132,8 +131,6 @@ class ImageRenderer: MetallicRenderer {
 	}
 
 	// MARK: -
-
-	let rectangularVertexCount = 6
 
 	func renderTexture(context: MetallicContext, texture: MTLTexture, in rect: Rect) {
 		guard let renderPipelineState = self.renderPipelineState else { return }

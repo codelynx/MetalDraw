@@ -10,7 +10,9 @@ import MetalKit
 
 class MetallicSceneView: MTKView, MTKViewDelegate {
 
-	var metallic: Metallic!
+//	var metallic: Metallic!
+
+	weak var metallicView: MetallicView!
 
 	var scene: MetallicScene? {
 		didSet {
@@ -19,9 +21,11 @@ class MetallicSceneView: MTKView, MTKViewDelegate {
 		}
 	}
 
+	var metallic: Metallic { return self.metallicView.metalic! }
+
 	override func layout() {
 		super.layout()
-		assert(metallic != nil)
+		assert(metallicView != nil)
 		self.device = metallic.device
 		self.wantsLayer = true
 		self.layer?.backgroundColor = NSColor.white.cgColor
@@ -72,7 +76,8 @@ class MetallicSceneView: MTKView, MTKViewDelegate {
 
         if let scene = self.scene, let t = self.renderingTransform {
             let t = float4x4(affineTransform: t)
-            let state = MetallicState(renderPassDescriptor: renderPassDescriptor, transform: t, dictionary: [:])
+            let scale = Float(metallicView.scrollView.zoomScale)
+            let state = MetallicState(renderPassDescriptor: renderPassDescriptor, transform: t, scale: scale, dictionary: [:])
             let context = MetallicContext(metallic: metallic, state: state)
             scene.render(context: context)
         }

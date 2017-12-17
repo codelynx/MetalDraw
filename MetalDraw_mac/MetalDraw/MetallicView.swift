@@ -69,7 +69,7 @@ class MetallicView: NSView, ScrollViewDelegate {
 
 	private (set) lazy var sceneView: MetallicSceneView = {
 		let sceneView = MetallicSceneView(frame: CGRect.zero)
-		sceneView.metallic = self.metalic
+		sceneView.metallicView = self
 		sceneView.translatesAutoresizingMaskIntoConstraints = false
 		return sceneView
 	}()

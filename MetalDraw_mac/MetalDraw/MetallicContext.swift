@@ -12,12 +12,14 @@ import simd
 struct MetallicState {
 	var renderPassDescriptor: MTLRenderPassDescriptor
 	var transform: float4x4
+	var scale: Float
 	var pixelFormat: MTLPixelFormat
 	var dictionary: [String: Any]
 	
-	init(renderPassDescriptor: MTLRenderPassDescriptor, transform: float4x4, pixelFormat: MTLPixelFormat = .bgra8Unorm, dictionary: [String: Any] = [:]) {
+	init(renderPassDescriptor: MTLRenderPassDescriptor, transform: float4x4, scale: Float, pixelFormat: MTLPixelFormat = .bgra8Unorm, dictionary: [String: Any] = [:]) {
 		self.renderPassDescriptor = renderPassDescriptor
 		self.transform = transform
+		self.scale = scale
 		self.pixelFormat = pixelFormat
 		self.dictionary = dictionary
 	}
@@ -61,6 +63,10 @@ class MetallicContext {
 
 	var transform: float4x4 {
 		return self.current.transform
+	}
+
+	var scale: Float {
+		return self.current.scale
 	}
 
 	subscript(key: String) -> Any? {

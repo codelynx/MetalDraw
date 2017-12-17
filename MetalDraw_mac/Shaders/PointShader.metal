@@ -25,6 +25,10 @@ struct FragmentIn {
 
 struct Uniforms {
 	float4x4 transform;
+	float scale;
+	float ununsed1;
+	float ununsed2;
+	float ununsed3;
 };
 
 vertex FragmentIn point_vertex(
@@ -37,7 +41,7 @@ vertex FragmentIn point_vertex(
 	
 	outVertex.position = uniforms.transform * float4(inVertex.position, 0, 1);
 	outVertex.color = float4(inVertex.color);
-	outVertex.pointSize = inVertex.width;
+	outVertex.pointSize = inVertex.width * uniforms.scale;
 	return outVertex;
 }
 

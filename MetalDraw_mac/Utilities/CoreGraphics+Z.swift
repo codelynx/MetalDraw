@@ -252,6 +252,9 @@ struct Point: Hashable, CustomStringConvertible {
 	static let zero = Point(x: 0, y: 0)
 	static let nan = Point(x: Float.nan, y: Float.nan)
 
+	func offsetBy(x: Float, y: Float) -> Point {
+		return Point(x: self.x + x, y: self.y + y)
+	}
 }
 
 
@@ -310,6 +313,16 @@ struct Rect: CustomStringConvertible {
 
 	var cgRectValue: CGRect { return CGRect(x: CGFloat(origin.x), y: CGFloat(origin.y), width: CGFloat(size.width), height: CGFloat(size.height)) }
 	var description: String { return "{Rect: (\(origin.x),\(origin.y))-(\(size.width), \(size.height))}" }
+
+	static var zero = Rect(x: 0, y: 0, width: 0, height: 0)
+	
+	func offsetBy(x: Float, y: Float) -> Rect {
+		return Rect(origin: self.origin.offsetBy(x: x, y: y), size: self.size)
+	}
+
+	func offsetBy(point: Point) -> Rect {
+		return Rect(origin: self.origin + point, size: self.size)
+	}
 }
 
 // MARK: -

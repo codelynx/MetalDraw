@@ -47,7 +47,7 @@ class ImageRenderer: MetallicRenderer {
 		let (l, r, t, b) = (rect.minX, rect.maxX, rect.maxY, rect.minY)
 
 		//	vertex	(y)		texture	(v)
-		//	1---4	(1) 		a---d 	(0)
+		//	1---4	(1) 	a---d 	(0)
 		//	|	|			|	|
 		//	2---3 	(0)		b---c 	(1)
 		//

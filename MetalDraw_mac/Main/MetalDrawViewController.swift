@@ -15,9 +15,16 @@ class MetalDrawViewController: NSViewController {
 		return SampleScene(bounds: CGRect(x: 0, y: 0, width: 1024, height: 768))
 	}()
 
+	lazy var sampleCanvas: MettalicCanvasScene = {
+		let canvas = MettalicCanvasScene(bounds: CGRect(x: 0, y: 0, width: 1024, height: 768))
+		let layer1 = Sample1CanvasLayer(frame: Rect(x: 0, y: 0, width: 1024, height: 768))
+		canvas.add(layer: layer1)
+		return canvas
+	}()
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.metallicView.scene = self.sampleScene
+		self.metallicView.scene = self.sampleCanvas
 	}
 
 

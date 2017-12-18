@@ -51,6 +51,8 @@ struct FragmentIn {
 
 struct Uniforms {
 	float4x4 transform;
+	float scale;
+	float unused1, unused2, unused3;
 };
 
 
@@ -115,7 +117,7 @@ vertex FragmentIn bezier_vertex(
 	VertexIn inVertex = verticies[vid];
 	FragmentIn outVertex;
 	outVertex.position = uniforms.transform * float4(float2(inVertex.position), 0, 1);
-	outVertex.pointSize = inVertex.width;
+	outVertex.pointSize = inVertex.width * uniforms.scale;
 	return outVertex;
 }
 

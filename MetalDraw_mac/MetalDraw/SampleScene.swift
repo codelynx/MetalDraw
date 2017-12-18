@@ -36,14 +36,13 @@ class SampleScene: MetallicScene {
 	override func render(context: MetallicContext) {
 
 		let image = NSImage(named: "dandelion.png")!
-//		context.render(image: image, in: Rect(-1, -1, 2, 2))
-		context.render(image: image, in: Rect(0, 0, 1024, 1024))
+		context.render(image: image, in: Rect(0, 0, 1113, 768))
 
 		context.renderColor(verticies: [pt1, pt2, pt3])
 		context.renderPoints(points: self.pointVertices)
 
 		let cgPath = NSBezierPath(ovalIn: self.bounds.insetBy(dx: 128, dy: 128)).cgPath
-		context.renderPath(cgPath: cgPath)
+		context.renderPath(cgPath: cgPath, scale: context.scale)
 	}
 }
 

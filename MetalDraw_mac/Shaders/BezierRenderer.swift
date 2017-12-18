@@ -22,6 +22,13 @@ class BezierRenderer: MetallicRenderer {
 
 	struct Uniforms {
 		var transform: float4x4
+		var scale: Float
+		var unused1, unused2, unused3: Float
+		init(transform: float4x4, scale: Float) {
+			self.transform = transform
+			self.scale = scale
+			(self.unused1, self.unused2, self.unused3) = (0, 0, 0)
+		}
 	}
 
 	enum PathElementType: UInt8 {
@@ -151,14 +158,14 @@ class BezierRenderer: MetallicRenderer {
 
 extension MetallicContext {
 
-	public func renderPath(cgPath: CGPath) {
+	public func renderPath(cgPath: CGPath, scale: Float) {
 
 		typealias PathElement = BezierRenderer.PathElement
 		typealias KernelOutVertexIn = BezierRenderer.VertexIn
 
 		do {
 			let renderer = self.renderer() as BezierRenderer
-			let uniforms = BezierRenderer.Uniforms(transform: self.transform)
+			let uniforms = BezierRenderer.Uniforms(transform: self.transform, scale: scale)
 			let uniformsBuffer = try device.makeBuffer(items: [uniforms])
 			let brushTexture = self.device.makeTexture(named: "test6")!
 

@@ -24,6 +24,7 @@ class MetallicSceneView: MTKView, MTKViewDelegate {
 	var metallic: Metallic { return self.metallicView.metalic! }
 
 	override func layout() {
+		self.setup()
 		super.layout()
 		assert(metallicView != nil)
 		self.device = metallic.device
@@ -34,6 +35,16 @@ class MetallicSceneView: MTKView, MTKViewDelegate {
 		self.delegate = self
 		
 	}
+	
+	lazy var setup: (()->()) = {
+		NotificationCenter.default.addObserver(self, selector: #selector(MetallicSceneView.displayScene(_:)), name: .displayScene, object: nil)
+		return {}
+	}()
+	
+	@objc func displayScene(_ notification: Notification) {
+		self.setNeedsDisplay()
+	}
+	
 
 	override var isFlipped: Bool { return true }
 
@@ -43,8 +54,8 @@ class MetallicSceneView: MTKView, MTKViewDelegate {
 		guard let scene = self.scene else { return nil }
 		let rect = scene.bounds
 		let center = rect.midXmidY
-		let t1 = CGAffineTransform(translationX: -center.x, y: -center.y)
-		let t2 = CGAffineTransform(scaleX: 2.0 / rect.width, y: 2.0 / rect.height)
+		let t1 = CGAffineTransform(translationX: CGFloat(-center.x), y: CGFloat(-center.y))
+		let t2 = CGAffineTransform(scaleX: 2.0 / CGFloat(rect.width), y: 2.0 / CGFloat(rect.height))
 		let t3 = CGAffineTransform(scaleX: 1.0, y: -1.0)
 		return t1 * t2 * t3
 	}
@@ -56,8 +67,8 @@ class MetallicSceneView: MTKView, MTKViewDelegate {
 	}
 
 	func draw(in view: MTKView) {
-		print("bounds: \(self.bounds)")
-        guard let drawable = self.currentDrawable else { print("currentDrawable nil: \(#function)"); return }
+		let t1 = Date.timeIntervalSinceReferenceDate
+        guard let drawable = self.currentDrawable else { fatalError() }
         let commandQueue = metallic.commandQueue
 
         let renderPassDescriptor = MTLRenderPassDescriptor()
@@ -65,13 +76,11 @@ class MetallicSceneView: MTKView, MTKViewDelegate {
         renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColorMake(1, 1, 1, 1)
         renderPassDescriptor.colorAttachments[0].loadAction = .clear
         renderPassDescriptor.colorAttachments[0].storeAction = .store
-
         if let commandBuffer = commandQueue.makeCommandBuffer(),
             let commandEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor) {
             commandEncoder.endEncoding()
             commandBuffer.commit()
         }
-
         renderPassDescriptor.colorAttachments[0].loadAction = .load
 
         if let scene = self.scene, let t = self.renderingTransform {
@@ -86,6 +95,8 @@ class MetallicSceneView: MTKView, MTKViewDelegate {
             commandBuffer.present(drawable)
             commandBuffer.commit()
         }
+		let t2 = Date.timeIntervalSinceReferenceDate
+		print("\(#function) - t: \(t2 - t1)")
 	}
 
 	// MARK: -

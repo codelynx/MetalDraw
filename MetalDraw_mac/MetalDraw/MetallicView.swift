@@ -9,7 +9,7 @@ import Cocoa
 import MetalKit
 
 extension Notification.Name {
-	static let displayMetallicScene = Notification.Name("DisplayMetallicScene")
+	static let displayScene = Notification.Name("DisplayMetallicScene")
 }
 
 extension Selector {
@@ -39,7 +39,7 @@ class MetallicView: NSView, ScrollViewDelegate {
 		set {
 			self.sceneView.scene = newValue
 			if let scene = scene {
-				self.sceneView.frame = CGRect(x: 0, y: 0, width: scene.width, height: scene.height)
+				self.sceneView.frame = CGRect(x: 0, y: 0, width: CGFloat(scene.width), height: CGFloat(scene.height))
 			}
 		}
 	}
@@ -75,7 +75,8 @@ class MetallicView: NSView, ScrollViewDelegate {
 	}()
 
 	private lazy var setup: (()->()) = {
-		self.sceneView.frame = CGRect(x: 0, y: 0, width: 1024, height: 768)
+		let frame = self.scene?.bounds ?? Rect(0, 0, 1024, 768)
+		self.sceneView.frame = CGRect(frame)
 		self.addSubview(self.scrollView)
 		self.scrollView.contentView = self.clipView
 		self.clipView.addSubview(self.sceneView);
@@ -94,7 +95,7 @@ class MetallicView: NSView, ScrollViewDelegate {
 		self.scrollView.maxMagnification = 4
 		self.scrollView.minMagnification = 0.5
 
-		NotificationCenter.default.addObserver(self, selector: #selector(displayScene), name: .displayMetallicScene, object: self)
+		NotificationCenter.default.addObserver(self, selector: #selector(displayScene), name: .displayScene, object: self)
 		self.enableSetNeedsDisplay = true
 		return {}
 	}()

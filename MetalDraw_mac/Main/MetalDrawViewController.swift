@@ -12,13 +12,11 @@ class MetalDrawViewController: NSViewController {
 	@IBOutlet weak var metallicView: MetallicView!
 
 	lazy var sampleScene: SampleScene = {
-		return SampleScene(bounds: CGRect(x: 0, y: 0, width: 1024, height: 768))
+		return SampleScene(bounds: Rect(x: 0, y: 0, width: 1024, height: 768))
 	}()
 
-	lazy var sampleCanvas: MettalicCanvasScene = {
-		let canvas = MettalicCanvasScene(bounds: CGRect(x: 0, y: 0, width: 1024, height: 768))
-		let layer1 = Sample1CanvasLayer(frame: Rect(x: 0, y: 0, width: 1024, height: 768))
-		canvas.add(layer: layer1)
+	lazy var sampleCanvas: MetallicCanvas = {
+		let canvas = SimpleCanvas(bounds: Rect(x: 0, y: 0, width: 1024, height: 768))
 		return canvas
 	}()
 
@@ -26,7 +24,6 @@ class MetalDrawViewController: NSViewController {
 		super.viewDidLoad()
 		self.metallicView.scene = self.sampleCanvas
 	}
-
 
 }
 

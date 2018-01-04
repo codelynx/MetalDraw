@@ -22,7 +22,6 @@ extension MTLDevice {
 		let data = try! Data(contentsOf: URL(fileURLWithPath: filepath))
 		do {
 			let texture = try self.textureLoader.newTexture(data: data, options: nil)
-			print("pixelFormat=\(texture.pixelFormat.rawValue)")
 			return texture
 		}
 		catch { print("\(error)"); fatalError("\(error)") }

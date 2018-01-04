@@ -13,30 +13,31 @@ class MetallicScene: MetallicNode, Equatable {
 
 	fileprivate (set) var metallic: Metallic? {
 		didSet {
-			self.metallicDidSet()
+			self.prepareScene()
 		}
 	}
 
-	var bounds: CGRect
+	var bounds: Rect
 	var subnodes = [MetallicNode]()
 
-	var width: CGFloat { return bounds.width }
-	var height: CGFloat { return bounds.height }
+	var width: Float { return bounds.width }
+	var height: Float { return bounds.height }
 
-	init(bounds: CGRect) {
+	init(bounds: Rect) {
 		self.bounds = bounds
 	}
 
 	func render(context: MetallicContext) {
-		
 	}
 
 	func setNeedsDisplay() {
-		NotificationCenter.default.post(name: .displayMetallicScene, object: self)
+		NotificationCenter.default.post(name: .displayScene, object: nil)
 	}
 	
-	func metallicDidSet() {
+	func prepareScene() {
 	}
+
+	// MARK: -
 
 	static func == (lhs: MetallicScene, rhs: MetallicScene) -> Bool {
 		return lhs === rhs
@@ -48,8 +49,9 @@ class MetallicScene: MetallicNode, Equatable {
         return event.sceneView.convert(event.locationInWindow, from: nil)
 	}
 
+	// MARK: -
+
     func mouseDown(with event: MetallicEvent) {
-		//let pt = self.locationInScene(event)
     }
 
     func mouseMoved(with event: MetallicEvent) {

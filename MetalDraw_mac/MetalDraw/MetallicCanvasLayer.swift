@@ -12,25 +12,36 @@ import MetalKit
 
 class MetallicCanvasLayer {
 
-	var isDynamic: Bool = false
+	var isStatic: Bool = true
 	var isHidden: Bool = false
 
 	var frame: Rect = Rect.zero
 
 	var bounds: Rect {
-		return self.frame.offsetBy(point: self.frame.origin)
+		return self.canvas.bounds
 	}
 
-	weak var canvas: MettalicCanvasScene?
+	unowned var canvas: MetallicCanvas
 
-	init(frame: Rect) {
-		self.frame = frame
+	var metallic: Metallic? { return canvas.metallic }
+
+	init(canvas: MetallicCanvas) {
+		self.canvas = canvas
 	}
 
 	func render(context: MetallicContext) {
-		
 	}
 
 }
 
+extension MetallicCanvasLayer: Equatable, Hashable {
+
+	static func == (lhs: MetallicCanvasLayer, rhs: MetallicCanvasLayer) -> Bool {
+		return lhs === rhs
+	}
+
+    var hashValue: Int {
+		return ObjectIdentifier(self).hashValue
+    }
+}
 

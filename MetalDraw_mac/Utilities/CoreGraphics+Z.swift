@@ -304,12 +304,27 @@ struct Rect: CustomStringConvertible {
 		self.size = Size(rect.size)
 	}
 
+	var width: Float { return size.width }
+	var height: Float { return size.height }
+
 	var minX: Float { return min(origin.x, origin.x + size.width) }
 	var maxX: Float { return max(origin.x, origin.x + size.width) }
 	var midX: Float { return (origin.x + origin.x + size.width) / 2.0 }
 	var minY: Float { return min(origin.y, origin.y + size.height) }
 	var maxY: Float { return max(origin.y, origin.y + size.height) }
 	var midY: Float { return (origin.y + origin.y + size.height) / 2.0 }
+
+	var minXminY: Point { return Point(x: minX, y: minY) }
+	var midXminY: Point { return Point(x: midX, y: minY) }
+	var maxXminY: Point { return Point(x: maxX, y: minY) }
+
+	var minXmidY: Point { return Point(x: minX, y: midY) }
+	var midXmidY: Point { return Point(x: midX, y: midY) }
+	var maxXmidY: Point { return Point(x: maxX, y: midY) }
+
+	var minXmaxY: Point { return Point(x: minX, y: maxY) }
+	var midXmaxY: Point { return Point(x: midX, y: maxY) }
+	var maxXmaxY: Point { return Point(x: maxX, y: maxY) }
 
 	var cgRectValue: CGRect { return CGRect(x: CGFloat(origin.x), y: CGFloat(origin.y), width: CGFloat(size.width), height: CGFloat(size.height)) }
 	var description: String { return "{Rect: (\(origin.x),\(origin.y))-(\(size.width), \(size.height))}" }
@@ -322,6 +337,10 @@ struct Rect: CustomStringConvertible {
 
 	func offsetBy(point: Point) -> Rect {
 		return Rect(origin: self.origin + point, size: self.size)
+	}
+
+	func insetBy(dx: Float, dy: Float) -> Rect {
+		return Rect(CGRect(self).insetBy(dx: CGFloat(dx), dy: CGFloat(dy)))
 	}
 }
 

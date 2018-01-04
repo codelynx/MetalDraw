@@ -10,6 +10,9 @@
 		372ED8481FC74E0E005EDD6A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372ED8471FC74E0E005EDD6A /* Extensions.swift */; };
 		372ED84A1FC74F22005EDD6A /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372ED8491FC74F21005EDD6A /* ScrollView.swift */; };
 		CC0700BE1FC7317A00BFB914 /* MetallicEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0700BD1FC7317A00BFB914 /* MetallicEvent.swift */; };
+		CC129B841FF02E110074B5E8 /* MetallicCanvasLayerGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC129B831FF02E110074B5E8 /* MetallicCanvasLayerGroup.swift */; };
+		CC84D46E1FEDE437004296E5 /* SimpleCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC84D46D1FEDE436004296E5 /* SimpleCanvas.swift */; };
+		CC84D4701FEDE536004296E5 /* SimpleStroke.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC84D46F1FEDE536004296E5 /* SimpleStroke.swift */; };
 		CCA3A21D1FDB0B21009BF692 /* CGPath+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA3A21C1FDB0B21009BF692 /* CGPath+Z.swift */; };
 		CCA3A2211FDB1B68009BF692 /* Float16.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA3A2201FDB1B68009BF692 /* Float16.swift */; };
 		CCA3A2231FDC3D1A009BF692 /* NSBezierPath+Z.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA3A2221FDC3D1A009BF692 /* NSBezierPath+Z.swift */; };
@@ -34,13 +37,13 @@
 		CCA5E3961FC473D400AC275F /* MetallicBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5E3951FC473D400AC275F /* MetallicBuffer.swift */; };
 		CCA778811FE38A8100C24D13 /* test5.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA778801FE38A8100C24D13 /* test5.png */; };
 		CCA778871FE441C000C24D13 /* test6.png in Resources */ = {isa = PBXBuildFile; fileRef = CCA778861FE441BF00C24D13 /* test6.png */; };
-		CCA778891FE4889300C24D13 /* MetallicCanvasScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA778881FE4889300C24D13 /* MetallicCanvasScene.swift */; };
+		CCA778891FE4889300C24D13 /* MetallicCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA778881FE4889300C24D13 /* MetallicCanvas.swift */; };
 		CCA7788D1FE5B66400C24D13 /* MetallicCanvasLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA7788C1FE5B66300C24D13 /* MetallicCanvasLayer.swift */; };
 		CCA778901FE5D18B00C24D13 /* ImageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA7788E1FE5D18B00C24D13 /* ImageRenderer.swift */; };
 		CCA778911FE5D18B00C24D13 /* ImageShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = CCA7788F1FE5D18B00C24D13 /* ImageShaders.metal */; };
 		CCC53DFE1FC5375F00B56678 /* MTLDevice+Metallic.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC53DFD1FC5375F00B56678 /* MTLDevice+Metallic.swift */; };
 		CCCF7ADC1FE746F100BCC5E0 /* dandelion.png in Resources */ = {isa = PBXBuildFile; fileRef = CCCF7ADB1FE746F100BCC5E0 /* dandelion.png */; };
-		CCCF7ADE1FE76D8000BCC5E0 /* Sample1CanvasLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCF7ADD1FE76D8000BCC5E0 /* Sample1CanvasLayer.swift */; };
+		CCCF7ADE1FE76D8000BCC5E0 /* SimpleCanvasLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCF7ADD1FE76D8000BCC5E0 /* SimpleCanvasLayer.swift */; };
 		CCE32D651FE0EED9005EE375 /* PointShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = CCE32D641FE0EED9005EE375 /* PointShader.metal */; };
 		CCE32D671FE0EF4E005EE375 /* PointRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE32D661FE0EF4E005EE375 /* PointRenderer.swift */; };
 		CCE32D6D1FE1877D005EE375 /* BezierRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE32D6B1FE1877D005EE375 /* BezierRenderer.swift */; };
@@ -54,6 +57,9 @@
 		372ED8471FC74E0E005EDD6A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		372ED8491FC74F21005EDD6A /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		CC0700BD1FC7317A00BFB914 /* MetallicEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicEvent.swift; sourceTree = "<group>"; };
+		CC129B831FF02E110074B5E8 /* MetallicCanvasLayerGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicCanvasLayerGroup.swift; sourceTree = "<group>"; };
+		CC84D46D1FEDE436004296E5 /* SimpleCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCanvas.swift; sourceTree = "<group>"; };
+		CC84D46F1FEDE536004296E5 /* SimpleStroke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleStroke.swift; sourceTree = "<group>"; };
 		CCA3A21C1FDB0B21009BF692 /* CGPath+Z.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPath+Z.swift"; sourceTree = "<group>"; };
 		CCA3A2201FDB1B68009BF692 /* Float16.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Float16.swift; sourceTree = "<group>"; };
 		CCA3A2221FDC3D1A009BF692 /* NSBezierPath+Z.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBezierPath+Z.swift"; sourceTree = "<group>"; };
@@ -81,13 +87,13 @@
 		CCA5E3951FC473D400AC275F /* MetallicBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetallicBuffer.swift; sourceTree = "<group>"; };
 		CCA778801FE38A8100C24D13 /* test5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test5.png; sourceTree = "<group>"; };
 		CCA778861FE441BF00C24D13 /* test6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test6.png; sourceTree = "<group>"; };
-		CCA778881FE4889300C24D13 /* MetallicCanvasScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicCanvasScene.swift; sourceTree = "<group>"; };
+		CCA778881FE4889300C24D13 /* MetallicCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallicCanvas.swift; sourceTree = "<group>"; };
 		CCA7788C1FE5B66300C24D13 /* MetallicCanvasLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetallicCanvasLayer.swift; sourceTree = "<group>"; };
 		CCA7788E1FE5D18B00C24D13 /* ImageRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRenderer.swift; sourceTree = "<group>"; };
 		CCA7788F1FE5D18B00C24D13 /* ImageShaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ImageShaders.metal; sourceTree = "<group>"; };
 		CCC53DFD1FC5375F00B56678 /* MTLDevice+Metallic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTLDevice+Metallic.swift"; sourceTree = "<group>"; };
 		CCCF7ADB1FE746F100BCC5E0 /* dandelion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dandelion.png; sourceTree = "<group>"; };
-		CCCF7ADD1FE76D8000BCC5E0 /* Sample1CanvasLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample1CanvasLayer.swift; sourceTree = "<group>"; };
+		CCCF7ADD1FE76D8000BCC5E0 /* SimpleCanvasLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCanvasLayer.swift; sourceTree = "<group>"; };
 		CCE32D641FE0EED9005EE375 /* PointShader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = PointShader.metal; sourceTree = "<group>"; };
 		CCE32D661FE0EF4E005EE375 /* PointRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointRenderer.swift; sourceTree = "<group>"; };
 		CCE32D6B1FE1877D005EE375 /* BezierRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierRenderer.swift; sourceTree = "<group>"; };
@@ -155,8 +161,9 @@
 			children = (
 				CCA5E3911FC4176A00AC275F /* Metallic.swift */,
 				CCA5E3951FC473D400AC275F /* MetallicBuffer.swift */,
+				CCA778881FE4889300C24D13 /* MetallicCanvas.swift */,
 				CCA7788C1FE5B66300C24D13 /* MetallicCanvasLayer.swift */,
-				CCA778881FE4889300C24D13 /* MetallicCanvasScene.swift */,
+				CC129B831FF02E110074B5E8 /* MetallicCanvasLayerGroup.swift */,
 				CCA5E3891FC3F94D00AC275F /* MetallicContext.swift */,
 				CC0700BD1FC7317A00BFB914 /* MetallicEvent.swift */,
 				CCA5E38D1FC3F9DA00AC275F /* MetallicNode.swift */,
@@ -165,8 +172,10 @@
 				CCA5E3771FC3907000AC275F /* MetallicSceneView.swift */,
 				CCA5E3731FC38E5200AC275F /* MetallicView.swift */,
 				CCC53DFD1FC5375F00B56678 /* MTLDevice+Metallic.swift */,
-				CCCF7ADD1FE76D8000BCC5E0 /* Sample1CanvasLayer.swift */,
 				CCA5E38F1FC400E100AC275F /* SampleScene.swift */,
+				CC84D46D1FEDE436004296E5 /* SimpleCanvas.swift */,
+				CCCF7ADD1FE76D8000BCC5E0 /* SimpleCanvasLayer.swift */,
+				CC84D46F1FEDE536004296E5 /* SimpleStroke.swift */,
 			);
 			path = MetalDraw;
 			sourceTree = "<group>";
@@ -310,6 +319,7 @@
 				CCA5E3641FC389C300AC275F /* MetalDrawViewController.swift in Sources */,
 				CCA5E3621FC389C300AC275F /* AppDelegate.swift in Sources */,
 				CCA5E3881FC3D75E00AC275F /* Stack.swift in Sources */,
+				CC84D46E1FEDE437004296E5 /* SimpleCanvas.swift in Sources */,
 				CCA5E3941FC41AA800AC275F /* MetallicRenderer.swift in Sources */,
 				CCA5E38C1FC3F98100AC275F /* MetallicScene.swift in Sources */,
 				CCA5E3781FC3907000AC275F /* MetallicSceneView.swift in Sources */,
@@ -317,8 +327,9 @@
 				CCA5E3741FC38E5200AC275F /* MetallicView.swift in Sources */,
 				CCE32D671FE0EF4E005EE375 /* PointRenderer.swift in Sources */,
 				CCC53DFE1FC5375F00B56678 /* MTLDevice+Metallic.swift in Sources */,
+				CC129B841FF02E110074B5E8 /* MetallicCanvasLayerGroup.swift in Sources */,
 				CCA5E38A1FC3F94D00AC275F /* MetallicContext.swift in Sources */,
-				CCA778891FE4889300C24D13 /* MetallicCanvasScene.swift in Sources */,
+				CCA778891FE4889300C24D13 /* MetallicCanvas.swift in Sources */,
 				CCA778901FE5D18B00C24D13 /* ImageRenderer.swift in Sources */,
 				CCA5E3661FC389C300AC275F /* MetalDrawDocument.swift in Sources */,
 				CCA5E3821FC3D1AC00AC275F /* ColorShaders.metal in Sources */,
@@ -328,7 +339,8 @@
 				CCA5E37D1FC393A500AC275F /* FlippedClipView.swift in Sources */,
 				CCA5E38E1FC3F9DA00AC275F /* MetallicNode.swift in Sources */,
 				CCE32D741FE190A5005EE375 /* XPlatform.swift in Sources */,
-				CCCF7ADE1FE76D8000BCC5E0 /* Sample1CanvasLayer.swift in Sources */,
+				CCCF7ADE1FE76D8000BCC5E0 /* SimpleCanvasLayer.swift in Sources */,
+				CC84D4701FEDE536004296E5 /* SimpleStroke.swift in Sources */,
 				CCE32D6D1FE1877D005EE375 /* BezierRenderer.swift in Sources */,
 				CCE32D701FE18856005EE375 /* NSImage+Z.swift in Sources */,
 			);

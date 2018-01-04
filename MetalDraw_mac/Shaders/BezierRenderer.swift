@@ -60,7 +60,7 @@ class BezierRenderer: MetallicRenderer {
 			self.unused3 = 0
 			self.numberOfVertexes = numberOfVertexes
 			(self.p0, self.p1, self.p2, self.p3) = (p0, p1, p2, p3)
-			(self.w1, self.w2) = (8, 16)
+			(self.w1, self.w2) = (8, 8)
 		}
 	}
 
@@ -119,9 +119,10 @@ class BezierRenderer: MetallicRenderer {
 	}()
 
 	func render(context: MetallicContext, pathElement: PathElement, uniformsBuffer: MetallicBuffer<Uniforms>, brushTexture: MTLTexture) throws {
+		let count = Int(pathElement.numberOfVertexes)
+		guard count > 0 else { return }
 
 		let pathElementBuffer = try device.makeBuffer(items: [pathElement])
-		let count = Int(pathElement.numberOfVertexes)
 		let vertices = [VertexIn](repeating: VertexIn.zero, count: Int(count))
 		let verticesBuffer = try device.makeBuffer(items: vertices)
 
@@ -133,7 +134,7 @@ class BezierRenderer: MetallicRenderer {
 		computeEncoder.setComputePipelineState(self.computePipelineState)
 		computeEncoder.setBuffer(pathElementBuffer.buffer, offset: 0, index: 0)
 		computeEncoder.setBuffer(verticesBuffer.buffer, offset: 0, index: 1)
-		let threadWidth = 64
+		let threadWidth = 256
 		let threadsPerThreadgroup = MTLSizeMake(threadWidth, 1, 1)
 		let threadgroupsPerGrid = MTLSizeMake((count + threadWidth - 1) / threadWidth, 1, 1)
 		computeEncoder.dispatchThreadgroups(threadgroupsPerGrid, threadsPerThreadgroup: threadsPerThreadgroup)
@@ -190,7 +191,7 @@ extension MetallicContext {
 					lastPoint = p2
 				case .curveTo(let p1, let p2, let p3):
 					guard let p0 = lastPoint else { continue }
-					let count = UInt32(CGPath.approximateCubicCurveLength(p0, p1, p2, p3))
+					let count = UInt32(CGPath.approximateCubicCurveLength(p0, p1, p2, p3) / 2)
 					let pathElement = PathElement(type: .curveTo, numberOfVertexes: count, p0: Point(p0), p1: Point(p1), p2: Point(p2), p3: Point(p3))
 					try renderer.render(context: self, pathElement: pathElement, uniformsBuffer: uniformsBuffer, brushTexture: brushTexture)
 					lastPoint = p3

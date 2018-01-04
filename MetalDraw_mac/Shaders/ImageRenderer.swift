@@ -87,8 +87,8 @@ class ImageRenderer: MetallicRenderer {
 		renderPipelineDescriptor.colorAttachments[0].rgbBlendOperation = .add
 		renderPipelineDescriptor.colorAttachments[0].alphaBlendOperation = .add
 
-		renderPipelineDescriptor.colorAttachments[0].sourceRGBBlendFactor = .one
-		renderPipelineDescriptor.colorAttachments[0].sourceAlphaBlendFactor = .one
+		renderPipelineDescriptor.colorAttachments[0].sourceRGBBlendFactor = .sourceAlpha // .one
+		renderPipelineDescriptor.colorAttachments[0].sourceAlphaBlendFactor = .sourceAlpha // .one
 		renderPipelineDescriptor.colorAttachments[0].destinationRGBBlendFactor = .oneMinusSourceAlpha
 		renderPipelineDescriptor.colorAttachments[0].destinationAlphaBlendFactor = .oneMinusSourceAlpha
 
@@ -135,11 +135,6 @@ class ImageRenderer: MetallicRenderer {
 	func renderTexture(context: MetallicContext, texture: MTLTexture, in rect: Rect) {
 		guard let renderPipelineState = self.renderPipelineState else { return }
 	
-	
-		print("a=", float4(0, 0, 0, 1) * context.transform)
-		print("a=", float4(1024, 1024, 0, 1) * context.transform)
-
-	
 		let uniforms = Uniforms(transform: context.transform)
 		let uniformsBuffer = try! self.device.makeBuffer(items: [uniforms])
 
@@ -151,7 +146,6 @@ class ImageRenderer: MetallicRenderer {
 		encoder.setRenderPipelineState(renderPipelineState)
 
 		encoder.setFrontFacing(.clockwise)
-//		commandEncoder.setCullMode(.back)
 		encoder.setVertexBuffer(vertexBuffer.buffer, offset: 0, index: 0)
 		encoder.setVertexBuffer(uniformsBuffer.buffer, offset: 0, index: 1)
 
@@ -163,6 +157,7 @@ class ImageRenderer: MetallicRenderer {
 		encoder.endEncoding()
 
 		commandBuffer.commit()
+		//commandBuffer.waitUntilCompleted()
 	}
 }
 
